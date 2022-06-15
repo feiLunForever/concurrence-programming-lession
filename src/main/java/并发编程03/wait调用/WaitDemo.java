@@ -1,4 +1,4 @@
-package 并发编程02.wait调用;
+package 并发编程03.wait调用;
 
 /**
  * @Author linhao

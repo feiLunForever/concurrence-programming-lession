@@ -1,4 +1,4 @@
-package 并发编程03.ReentrantLock案例;
+package 并发编程04.ReentrantLock案例;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;

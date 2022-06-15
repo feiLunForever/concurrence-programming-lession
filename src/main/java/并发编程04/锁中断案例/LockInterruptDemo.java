@@ -1,4 +1,4 @@
-package 并发编程03.锁中断案例;
+package 并发编程04.锁中断案例;
 
 import org.junit.jupiter.api.Test;
 

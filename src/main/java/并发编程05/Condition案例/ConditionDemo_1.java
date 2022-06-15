@@ -1,4 +1,4 @@
-package 并发编程04.Condition案例;
+package 并发编程05.Condition案例;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

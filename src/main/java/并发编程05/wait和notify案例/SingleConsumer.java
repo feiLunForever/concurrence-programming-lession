@@ -1,4 +1,4 @@
-package 并发编程04.wait和notify案例;
+package 并发编程05.wait和notify案例;
 
 /**
  * @Author linhao

@@ -1,4 +1,4 @@
-package 并发编程02.查看内存布局信息;
+package 并发编程03.查看内存布局信息;
 
 import org.openjdk.jol.info.ClassLayout;
 

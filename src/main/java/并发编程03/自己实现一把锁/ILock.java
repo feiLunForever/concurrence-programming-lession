@@ -1,4 +1,4 @@
-package 并发编程02.自己实现一把锁;
+package 并发编程03.自己实现一把锁;
 
 /**
  * @Author linhao

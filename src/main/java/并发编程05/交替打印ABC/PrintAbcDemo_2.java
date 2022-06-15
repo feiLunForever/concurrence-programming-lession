@@ -1,4 +1,4 @@
-package 并发编程04.交替打印ABC;
+package 并发编程05.交替打印ABC;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;

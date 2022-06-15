@@ -1,6 +1,4 @@
-package 并发编程02.sync锁;
-
-import java.util.concurrent.CountDownLatch;
+package 并发编程03.sync锁;
 
 /**
  * @Author linhao
