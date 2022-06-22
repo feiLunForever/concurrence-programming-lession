@@ -7,9 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import 并发编程06.中间件中的线程池使用.service.AsyncService;
 
 import javax.annotation.Resource;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * @Author linhao

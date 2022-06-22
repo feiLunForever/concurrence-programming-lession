@@ -1,4 +1,4 @@
-package 并发编程07.producer_consumer模式;
+package 并发编程12.producer_consumer模式;
 
 import java.util.concurrent.ArrayBlockingQueue;
 
