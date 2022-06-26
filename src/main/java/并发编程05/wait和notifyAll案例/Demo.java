@@ -1,0 +1,8 @@
+package 并发编程05.wait和notifyAll案例;
+
+/**
+ * @Author linhao
+ * @Date created in 7:58 上午 2022/6/23
+ */
+public class Demo {
+}

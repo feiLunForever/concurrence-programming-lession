@@ -43,6 +43,7 @@ public class AtomicDemo {
     @Test
     public void testAtomicInteger(){
         AtomicInteger atomicInteger = new AtomicInteger(1);
+        atomicInteger.incrementAndGet();
         System.out.println(atomicInteger.addAndGet(1));
         System.out.println(atomicInteger.getAndAdd(1));
     }
