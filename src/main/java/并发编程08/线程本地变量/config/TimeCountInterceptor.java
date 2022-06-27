@@ -17,7 +17,7 @@ public class TimeCountInterceptor implements HandlerInterceptor {
     static class CommonThreadLocal<Long> extends ThreadLocal{
         @Override
         protected Object initialValue() {
-            return 1000;
+            return -1;
         }
     }
     private static ThreadLocal<Long> timeCount = new CommonThreadLocal<>();
