@@ -1,4 +1,4 @@
-package 并发编程12.guarded_suspension模式;
+package 并发编程09.guarded_suspension模式;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
