@@ -14,7 +14,7 @@ public class InterruptThread {
         @Override
         public void run() {
             for (int i = 0; i < 10; i++) {
-                System.out.print(i+" ");
+                System.out.print(i + " ");
                 try {
                     Thread.sleep(2000);
                 } catch (InterruptedException e) {
@@ -30,7 +30,7 @@ public class InterruptThread {
         public void run() {
             synchronized (this) {
                 for (int i = 20; i < 30; i++) {
-                    System.out.print(i+" ");
+                    System.out.print(i + " ");
                     try {
                         Thread.sleep(2000);
                     } catch (InterruptedException e) {
@@ -51,12 +51,13 @@ public class InterruptThread {
             reentrantLock.lock();
             try {
                 for (int i = 30; i < 40; i++) {
-                    System.out.print(i+" ");
+                    System.out.print(i + " ");
                     try {
                         Thread.sleep(2000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
+                    System.out.println("test");
                 }
             } finally {
                 reentrantLock.unlock();
@@ -64,17 +65,28 @@ public class InterruptThread {
         }
     }
 
+    static class TestInterruptedStop implements Runnable {
+
+        @Override
+        public void run() {
+            synchronized (this) {
+                //如果当前线程被中断，这里需要主动退出
+                while (!Thread.currentThread().isInterrupted()) {
+                }
+                System.out.println("end");
+            }
+        }
+    }
 
     static class ForEverThread implements Runnable {
 
         @Override
         public void run() {
             System.out.println("开始执行");
-            while (true){
+            while (true) {
 
             }
         }
-
 
     }
 
@@ -87,9 +99,13 @@ public class InterruptThread {
         testThreadWithLock.start();
         Thread forEverThread = new Thread(new ForEverThread());
         forEverThread.start();
+        Thread testInterruptedStop = new Thread(new TestInterruptedStop());
+        testInterruptedStop.start();
 
         Thread.sleep(2000);
-
+        testInterruptedStop.interrupt();
+        Thread.sleep(1000);
+        System.out.println("testInterruptedStop is interrupted:" + testInterruptedStop.isInterrupted());
         forEverThread.interrupt();
         testThread.interrupt();
         testThreadWithSync.interrupt();
