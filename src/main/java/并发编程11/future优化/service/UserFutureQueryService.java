@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.concurrent.*;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 6:55 下午 2022/7/4
  */
 public class UserFutureQueryService implements IUserQueryService {
