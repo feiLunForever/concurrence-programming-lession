@@ -11,6 +11,7 @@ import 并发编程11.用户查询.rpc.UserVerifyRPCService;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
