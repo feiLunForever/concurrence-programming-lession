@@ -11,6 +11,7 @@ import 并发编程11.用户查询.rpc.UserVerifyRPCService;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -32,17 +33,17 @@ public class UserCompletableFutureQueryService implements IUserQueryService {
         UserInfoPO userInfoPO = userDao.queryUserInfo(userId);
         UserInfoDTO userInfoDTO = new UserInfoDTO();
         BeanUtils.copyProperties(userInfoPO, userInfoDTO);
+        System.out.println(userInfoDTO);
+
         CompletableFuture userVerifyFuture = CompletableFuture.supplyAsync(new Supplier<Boolean>() {
             @Override
             public Boolean get() {
                 return userVerifyRPCService.queryUserVerifyStatus(userId);
             }
-        });
-
-        userVerifyFuture.thenAccept(new Consumer<Boolean>() {
+        }).whenComplete(new BiConsumer<Boolean, Throwable>() {
             @Override
-            public void accept(Boolean state) {
-                userInfoDTO.setVerifyStatus(state);
+            public void accept(Boolean aBoolean, Throwable throwable) {
+                userInfoDTO.setVerifyStatus(aBoolean);
             }
         });
 
@@ -51,11 +52,10 @@ public class UserCompletableFutureQueryService implements IUserQueryService {
             public Integer get() {
                 return memberLevelRPCService.queryUserLevel(userId);
             }
-        });
-        memberLevelFuture.thenAccept(new Consumer<Integer>() {
+        }).whenComplete(new BiConsumer<Integer, Throwable>() {
             @Override
-            public void accept(Integer level) {
-                userInfoDTO.setMemberLevel(level);
+            public void accept(Integer integer, Throwable throwable) {
+                userInfoDTO.setMemberLevel(integer);
             }
         });
 
@@ -64,15 +64,21 @@ public class UserCompletableFutureQueryService implements IUserQueryService {
             public List<String> get() {
                 return userHeadPortraitRPCService.queryUserHeadPortrait(userId);
             }
-        });
-        userHeadPortraitFuture.thenAccept(new Consumer<List<String>>() {
+        }).whenComplete(new BiConsumer<List<String>, Throwable>() {
             @Override
-            public void accept(List<String> resultList) {
+            public void accept(List<String> resultList, Throwable throwable) {
                 userInfoDTO.setHeadPortrait(resultList);
             }
         });
+        CompletableFuture<Void> completableFuture = CompletableFuture.allOf(userVerifyFuture,memberLevelFuture,userHeadPortraitFuture);
+        try {
+            completableFuture.get();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return userInfoDTO;
     }
+
 
     public static void main(String[] args) {
         UserCompletableFutureQueryService userCompletableFutureQueryService = new UserCompletableFutureQueryService();
@@ -81,4 +87,5 @@ public class UserCompletableFutureQueryService implements IUserQueryService {
         long end = System.currentTimeMillis();
         System.out.println("请求耗时：" + (end - begin) + "," + userInfoDTO);
     }
+
 }

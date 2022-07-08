@@ -13,6 +13,7 @@ public class UserDao {
         userInfoPO.setAge((short) 11);
         userInfoPO.setTel("1677839102");
         userInfoPO.setSex((short) 1);
+        userInfoPO.setUserName("idea");
         userInfoPO.setUserId(userId);
         return userInfoPO;
     }
