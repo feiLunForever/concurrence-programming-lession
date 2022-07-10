@@ -34,7 +34,12 @@ public class ParalleStreamQueryDemo {
         return resultList;
     }
 
-    //采用了自定义的forkJoinPool
+    /**
+     * 采用了自定义的forkJoinPool
+     *
+     * @param userIdList
+     * @return
+     */
     public List<UserInfoDTO> batchQueryWithParallelV2(List<Long> userIdList) {
         Future<List<UserInfoDTO>> resultFuture = forkJoinPool.submit(() -> {
             List<UserInfoDTO> resultList = new ArrayList<>();
@@ -56,7 +61,7 @@ public class ParalleStreamQueryDemo {
 
     public List<UserInfoDTO> batchQuery(List<Long> userIdList) {
         List<UserInfoDTO> resultList = new ArrayList<>();
-        userIdList.stream().forEach(userId -> {
+        userIdList.forEach(userId -> {
             UserInfoDTO userInfoDTO = userQueryService.queryUserInfoWrapper(userId);
             resultList.add(userInfoDTO);
         });

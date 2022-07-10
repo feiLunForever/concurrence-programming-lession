@@ -33,7 +33,6 @@ public class UserCompletableFutureQueryService implements IUserQueryService {
         UserInfoPO userInfoPO = userDao.queryUserInfo(userId);
         UserInfoDTO userInfoDTO = new UserInfoDTO();
         BeanUtils.copyProperties(userInfoPO, userInfoDTO);
-        System.out.println(userInfoDTO);
 
         CompletableFuture userVerifyFuture = CompletableFuture.supplyAsync(new Supplier<Boolean>() {
             @Override
@@ -70,7 +69,7 @@ public class UserCompletableFutureQueryService implements IUserQueryService {
                 userInfoDTO.setHeadPortrait(resultList);
             }
         });
-        CompletableFuture<Void> completableFuture = CompletableFuture.allOf(userVerifyFuture,memberLevelFuture,userHeadPortraitFuture);
+        CompletableFuture<Void> completableFuture = CompletableFuture.allOf(userVerifyFuture, memberLevelFuture, userHeadPortraitFuture);
         try {
             completableFuture.get();
         } catch (Exception e) {
