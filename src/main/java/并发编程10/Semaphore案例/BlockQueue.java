@@ -1,4 +1,4 @@
-package 并发编程10.CyclicBarrier案例;
+package 并发编程10.Semaphore案例;
 
 import java.util.ArrayList;
 import java.util.List;
