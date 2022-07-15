@@ -1,6 +1,8 @@
 package 并发编程05.wait和notify案例;
 
 
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * @Author linhao
  * @Date created in 8:51 上午 2022/6/13

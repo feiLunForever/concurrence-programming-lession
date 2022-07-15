@@ -12,6 +12,8 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.Future;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
  * @Author idea
@@ -75,7 +77,6 @@ public class ParalleStreamQueryDemo {
         paralleStreamQueryDemo.batchQueryWithParallelV1(userIdList);
         long end = System.currentTimeMillis();
         System.out.println("耗时：" + (end - begin) + "ms");
-
         long begin2 = System.currentTimeMillis();
         paralleStreamQueryDemo.batchQueryWithParallelV2(userIdList);
         long end2 = System.currentTimeMillis();
