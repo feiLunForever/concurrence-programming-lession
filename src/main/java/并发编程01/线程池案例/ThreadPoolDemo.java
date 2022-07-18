@@ -4,7 +4,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 11:18 上午 2022/5/19
  */
 public class ThreadPoolDemo {

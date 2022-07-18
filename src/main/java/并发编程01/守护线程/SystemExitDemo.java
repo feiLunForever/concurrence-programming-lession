@@ -3,7 +3,7 @@ package 并发编程01.守护线程;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 6:30 下午 2022/5/18
  */
 public class SystemExitDemo {

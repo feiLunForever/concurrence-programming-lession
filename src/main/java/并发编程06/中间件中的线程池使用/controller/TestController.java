@@ -10,7 +10,7 @@ import javax.annotation.Resource;
 import java.util.concurrent.ExecutorService;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 11:00 下午 2022/6/19
  */
 @RestController

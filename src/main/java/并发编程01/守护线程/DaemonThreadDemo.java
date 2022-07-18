@@ -1,7 +1,7 @@
 package 并发编程01.守护线程;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 6:45 下午 2022/5/18
  */
 public class DaemonThreadDemo {

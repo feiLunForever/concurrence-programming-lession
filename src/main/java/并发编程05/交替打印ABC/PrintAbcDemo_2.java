@@ -5,7 +5,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 11:02 下午 2022/6/6
  */
 public class PrintAbcDemo_2 {

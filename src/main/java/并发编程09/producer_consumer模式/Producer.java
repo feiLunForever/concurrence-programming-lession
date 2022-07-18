@@ -3,7 +3,7 @@ package 并发编程09.producer_consumer模式;
 import java.util.concurrent.ArrayBlockingQueue;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 5:38 下午 2022/5/17
  */
 public class Producer {

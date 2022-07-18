@@ -1,7 +1,7 @@
 package 并发编程02.线程终止的几种方式;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 8:48 下午 2022/6/17
  */
 public class StopTransferThreadDemo {

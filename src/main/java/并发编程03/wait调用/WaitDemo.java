@@ -1,7 +1,7 @@
 package 并发编程03.wait调用;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 8:07 上午 2022/5/24
  */
 public class WaitDemo {

@@ -1,7 +1,7 @@
 package 并发编程11.用户查询.bean;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 6:42 下午 2022/7/4
  */
 public class UserInfoPO {

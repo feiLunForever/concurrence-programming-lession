@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 /**
  * 使用了并行流并不一定是真的并行
  *
- * @Author linhao
+ * @Author idea
  * @Date created in 10:01 上午 2022/7/10
  */
 public class ParalleStreamUseDemo {

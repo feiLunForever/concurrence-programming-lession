@@ -11,7 +11,7 @@ import 并发编程11.用户查询.rpc.UserVerifyRPCService;
 
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 6:29 下午 2022/7/4
  */
 public class UserQueryService implements IUserQueryService {

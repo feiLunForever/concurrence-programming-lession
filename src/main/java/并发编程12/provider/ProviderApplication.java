@@ -6,7 +6,7 @@ import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 7:36 下午 2022/7/5
  */
 @SpringBootApplication

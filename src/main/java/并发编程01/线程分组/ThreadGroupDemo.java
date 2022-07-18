@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 6:05 下午 2022/5/18
  */
 public class ThreadGroupDemo {

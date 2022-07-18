@@ -3,7 +3,7 @@ package 并发编程03.查看内存布局信息;
 import org.openjdk.jol.info.ClassLayout;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 8:05 上午 2022/6/7
  */
 public class MarkWordDemo_1 {

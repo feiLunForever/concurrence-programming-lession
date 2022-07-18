@@ -1,7 +1,7 @@
 package 并发编程00.cpu调度;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 11:21 下午 2022/6/13
  */
 public class CpuTaskDemo {

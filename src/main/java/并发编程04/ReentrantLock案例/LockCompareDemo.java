@@ -6,7 +6,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * Jdk中Lock使用技巧
  *
- * @Author linhao
+ * @Author idea
  * @Date created in 11:31 上午 2022/6/3
  */
 public class LockCompareDemo {

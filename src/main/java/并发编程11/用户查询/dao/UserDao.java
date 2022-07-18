@@ -3,7 +3,7 @@ package 并发编程11.用户查询.dao;
 import 并发编程11.用户查询.bean.UserInfoPO;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 5:20 下午 2022/7/4
  */
 public class UserDao {

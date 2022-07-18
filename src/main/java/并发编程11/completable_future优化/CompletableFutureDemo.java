@@ -12,7 +12,7 @@ import java.util.function.Supplier;
 /**
  * 使用CompletableFuture的底层原理
  *
- * @Author linhao
+ * @Author idea
  * @Date created in 2:35 下午 2022/7/6
  */
 public class CompletableFutureDemo {

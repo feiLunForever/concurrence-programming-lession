@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 5:17 下午 2022/7/4
  */
 public class UserInfoDTO implements Serializable {

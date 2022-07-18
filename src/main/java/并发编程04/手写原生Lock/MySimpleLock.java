@@ -5,7 +5,7 @@ import sun.misc.Unsafe;
 import java.lang.reflect.Field;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 9:56 下午 2022/6/9
  */
 public class MySimpleLock implements ILock {

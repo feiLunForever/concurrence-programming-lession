@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 10:39 下午 2022/6/21
  */
 @RestController

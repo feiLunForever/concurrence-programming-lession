@@ -6,7 +6,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 8:42 上午 2022/6/4
  */
 public class LockInterruptDemo {

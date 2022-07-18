@@ -8,7 +8,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import java.util.concurrent.Executor;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 8:55 上午 2022/6/20
  */
 //@Configuration

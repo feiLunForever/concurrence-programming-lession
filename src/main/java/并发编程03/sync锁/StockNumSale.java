@@ -1,7 +1,7 @@
 package 并发编程03.sync锁;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 8:08 上午 2022/5/22
  */
 public class StockNumSale {

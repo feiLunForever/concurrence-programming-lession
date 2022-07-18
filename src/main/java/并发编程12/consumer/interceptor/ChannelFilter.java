@@ -14,7 +14,7 @@ import java.util.UUID;
 /**
  * 渠道过滤器
  *
- * @Author linhao
+ * @Author idea
  * @Date created in 2:50 下午 2022/7/7
  */
 public class ChannelFilter implements Filter {

@@ -8,7 +8,7 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 8:37 上午 2022/6/8
  */
 public class ConditionDemo_1 {

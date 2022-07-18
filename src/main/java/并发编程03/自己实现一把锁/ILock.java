@@ -1,7 +1,7 @@
 package 并发编程03.自己实现一把锁;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 10:43 上午 2022/5/20
  */
 public interface ILock {

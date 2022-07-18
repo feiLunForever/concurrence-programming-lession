@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 用户注册案例
  *
- * @Author linhao
+ * @Author idea
  * @Date created in 10:36 上午 2022/6/19
  */
 public class UserRegistryDemo {

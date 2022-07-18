@@ -8,7 +8,7 @@ import java.util.concurrent.locks.LockSupport;
 /**
  * 简单的一把锁
  *
- * @Author linhao
+ * @Author idea
  * @Date created in 10:45 上午 2022/5/20
  */
 public class SimpleLock implements ILock{

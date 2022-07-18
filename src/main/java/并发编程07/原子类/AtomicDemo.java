@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.util.concurrent.atomic.*;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 8:29 上午 2022/6/22
  */
 public class AtomicDemo {

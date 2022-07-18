@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 使用线程池案例
  *
- * @Author linhao
+ * @Author idea
  * @Date created in 10:06 上午 2022/6/19
  */
 public class ThreadExecutorDemo {

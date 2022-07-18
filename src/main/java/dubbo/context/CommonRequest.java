@@ -3,7 +3,7 @@ package dubbo.context;
 import java.io.Serializable;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 2:51 下午 2022/7/7
  */
 public class CommonRequest implements Serializable {

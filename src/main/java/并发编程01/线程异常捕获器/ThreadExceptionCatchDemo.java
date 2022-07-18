@@ -1,7 +1,7 @@
 package 并发编程01.线程异常捕获器;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 11:52 上午 2022/5/19
  */
 public class ThreadExceptionCatchDemo {

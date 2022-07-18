@@ -6,7 +6,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import 并发编程12.consumer.interceptor.ChannelFilter;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 5:35 下午 2022/7/7
  */
 @Configuration

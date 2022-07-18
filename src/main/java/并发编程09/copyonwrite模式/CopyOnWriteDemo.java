@@ -6,7 +6,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 10:42 上午 2022/7/3
  */
 public class CopyOnWriteDemo {

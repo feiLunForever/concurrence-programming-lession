@@ -1,7 +1,7 @@
 package 并发编程11.用户查询.rpc;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 6:46 下午 2022/7/4
  */
 public class UserVerifyRPCService {

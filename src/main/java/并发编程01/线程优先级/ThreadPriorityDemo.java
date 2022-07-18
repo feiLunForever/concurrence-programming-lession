@@ -6,7 +6,7 @@ package 并发编程01.线程优先级;
  * 行，调试程序会首先运行具有最高优先级的那个线程。然而，这并不表示优先级较低的线程不会运行（换言之，不会因为存在优先级而导致死锁）。
  * 若线程的优先级较低，只不过表示它被准许运行的机会小一些而已。
  *
- * @Author linhao
+ * @Author idea
  * @Date created in 6:16 下午 2022/5/18
  */
 public class ThreadPriorityDemo {

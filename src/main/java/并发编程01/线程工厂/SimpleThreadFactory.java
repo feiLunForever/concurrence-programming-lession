@@ -5,7 +5,7 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 5:47 下午 2022/5/18
  */
 public class SimpleThreadFactory implements ThreadFactory {

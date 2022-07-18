@@ -1,7 +1,7 @@
 package 并发编程09.guarded_suspension模式;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 6:42 下午 2022/5/17
  */
 public enum SendResult {

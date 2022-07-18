@@ -4,7 +4,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 5:35 下午 2022/5/17
  */
 public class MQProducer {

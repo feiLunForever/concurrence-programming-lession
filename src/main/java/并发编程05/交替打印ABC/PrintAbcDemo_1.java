@@ -3,7 +3,7 @@ package 并发编程05.交替打印ABC;
 /**
  * 多线程间的通信
  *
- * @Author linhao
+ * @Author idea
  * @Date created in 11:20 上午 2022/6/5
  */
 public class PrintAbcDemo_1 {

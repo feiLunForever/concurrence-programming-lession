@@ -6,7 +6,7 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 8:27 下午 2022/6/29
  */
 public class CyclicBarrierDemo {

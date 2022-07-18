@@ -3,7 +3,7 @@ package 并发编程02.线程终止的几种方式;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 8:29 上午 2022/6/17
  */
 public class ThreadSuspendDemo {

@@ -7,7 +7,7 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 2:38 下午 2022/7/15
  */
 public class BlockQueue {

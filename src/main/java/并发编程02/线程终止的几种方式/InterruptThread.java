@@ -3,7 +3,7 @@ package 并发编程02.线程终止的几种方式;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 8:41 上午 2022/6/15
  */
 public class InterruptThread {
