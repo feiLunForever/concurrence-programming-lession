@@ -28,8 +28,8 @@ public class DubboProviderTraceFilter implements Filter {
             String attachment = invocation.getAttachment(String.valueOf(RequestContentConstants.COMMON_REQUEST));
             if (StringUtils.isNotEmpty(attachment)) {
                 CommonRequest commonRequest = JSON.parseObject(attachment,CommonRequest.class);
-                LOGGER.info("[DubboConsumerTraceFilter] ------> commonRequest is {}",commonRequest);
                 CommonRequestContext.put(RequestContentConstants.COMMON_REQUEST,commonRequest);
+                LOGGER.info("[DubboConsumerTraceFilter] ------> setValue in map");
             }
         } catch (Exception e) {
             e.printStackTrace();
