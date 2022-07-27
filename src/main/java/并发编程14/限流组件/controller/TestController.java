@@ -16,13 +16,13 @@ public class TestController {
 
     private Semaphore semaphore = new Semaphore(1);
 
-    @RequestLimit(timeOut = 1000, limit = 5)
+    @RequestLimit(timeOut = 10, limit = 2,name = "do-test")
     @GetMapping(value = "/do-test")
     public String doTest() throws InterruptedException {
 //        semaphore.tryAcquire(1000, TimeUnit.MILLISECONDS);
         System.out.println("this is begin!");
         try {
-            Thread.sleep(3000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

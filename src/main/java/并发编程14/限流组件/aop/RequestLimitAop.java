@@ -23,7 +23,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Component
 public class RequestLimitAop {
 
-    private static Map<String, AtomicInteger> limitMap = new ConcurrentHashMap<>();
+    private static Map<String, Semaphore> limitMap = new ConcurrentHashMap<>();
 
     @Pointcut(value = "@annotation(并发编程14.限流组件.annotation.RequestLimit)")
     public void pointCut() {
@@ -32,32 +32,35 @@ public class RequestLimitAop {
 
     @Around(value = "pointCut()")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
-        AtomicInteger limitReq = null;
+        Semaphore reqTimes = null;
         RequestLimit requestLimit = null;
-        try {
-            requestLimit = this.getRequestLimitInfo(joinPoint);
-            if (requestLimit != null) {
-                limitReq = limitMap.get(requestLimit.name());
-                if (limitReq == null) {
-                    limitReq = new AtomicInteger(1);
-                    limitMap.put(requestLimit.name(), limitReq);
+        boolean isProcess = false;
+        requestLimit = this.getRequestLimitInfo(joinPoint);
+        if (requestLimit != null) {
+            try {
+                reqTimes = limitMap.get(requestLimit.name());
+                if (reqTimes == null) {
+                    reqTimes = new Semaphore(requestLimit.limit());
+                    limitMap.put(requestLimit.name(), reqTimes);
                 }
-                if (limitReq.incrementAndGet() <= requestLimit.limit()) {
-                    joinPoint.proceed();
-
+                if (reqTimes.tryAcquire()) {
+                    limitMap.put(requestLimit.name(), reqTimes);
+                    Object result = joinPoint.proceed();
+                    isProcess = true;
+                    return result;
                 } else {
                     throw new IllegalAccessException("并发访问量超过预期,预期并发数：" + requestLimit.limit());
                 }
-            }
-            return joinPoint.proceed();
-        } catch (Throwable throwable) {
-            throw throwable;
-        } finally {
-            if (limitReq != null && requestLimit != null) {
-                limitReq.decrementAndGet();
-                limitMap.put(requestLimit.name(),limitReq);
+            } catch (Exception e) {
+                throw e;
+            } finally {
+                if (isProcess) {
+                    reqTimes.release();
+                    limitMap.put(requestLimit.name(), reqTimes);
+                }
             }
         }
+        return joinPoint.proceed();
     }
 
     public RequestLimit getRequestLimitInfo(ProceedingJoinPoint joinPoint) throws ClassNotFoundException {
