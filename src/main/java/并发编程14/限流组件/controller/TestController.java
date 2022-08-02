@@ -4,8 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import 并发编程14.限流组件.annotation.RequestLimit;
 
-import java.util.concurrent.Semaphore;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @Author linhao
@@ -14,20 +13,14 @@ import java.util.concurrent.TimeUnit;
 @RestController
 public class TestController {
 
-    private Semaphore semaphore = new Semaphore(1);
 
-    @RequestLimit(timeOut = 10, limit = 2,name = "do-test")
+    @RequestLimit(seconds = 1, limit = 10, name = "testRequestLimit")
     @GetMapping(value = "/do-test")
     public String doTest() throws InterruptedException {
-//        semaphore.tryAcquire(1000, TimeUnit.MILLISECONDS);
-        System.out.println("this is begin!");
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println("this is test");
-//        semaphore.release();
+        System.out.println("test");
+        Thread.sleep(300);
+        System.out.println("end");
         return "success";
     }
+
 }

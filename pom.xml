@@ -15,6 +15,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+        <jedis.version>3.0.1</jedis.version>
         <dubbo.version>2.7.8</dubbo.version>
         <zookeeper.version>3.5.3-beta</zookeeper.version>
         <curator.version>2.12.0</curator.version>
@@ -71,11 +72,6 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
-            <version>${springboot.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <version>${springboot.version}</version>
         </dependency>
@@ -83,6 +79,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
             <version>${springboot.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>${jedis.version}</version>
         </dependency>
 
         <dependency>

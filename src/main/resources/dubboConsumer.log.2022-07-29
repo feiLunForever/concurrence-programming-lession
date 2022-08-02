@@ -1,0 +1,942 @@
+[2022-07-29 17:27:11.167 - INFO] o.a.dubbo.common.logger.LoggerFactory    : null - using logger: org.apache.dubbo.common.logger.slf4j.Slf4jLoggerAdapter
+[2022-07-29 17:27:11.189 - INFO] d.s.b.c.e.WelcomeLogoApplicationListener : null - 
+
+ :: Dubbo Spring Boot (v2.7.8) : https://github.com/apache/dubbo-spring-boot-project
+ :: Dubbo (v2.7.8) : https://github.com/apache/dubbo
+ :: Discuss group : dev@dubbo.apache.org
+
+[2022-07-29 17:27:11.192 - INFO] e.OverrideDubboConfigApplicationListener : null - Dubbo Config was overridden by externalized configuration {dubbo.application.name=dubboConsumer, dubbo.application.qos-enable=false, dubbo.config.multiple=true}
+[2022-07-29 17:27:11.298 - INFO] 并发编程14.限流组件.Application                  : null - Starting Application on idea-MacBook-Pro.local with PID 23122 (/Users/linhao/IdeaProjects/my-github/concurrence-programming-lession/target/classes started by linhao in /Users/linhao/IdeaProjects/my-github/concurrence-programming-lession)
+[2022-07-29 17:27:11.298 - INFO] 并发编程14.限流组件.Application                  : null - The following profiles are active: consumer
+[2022-07-29 17:27:11.835 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [referenceAnnotationBeanPostProcessor] has been registered.
+[2022-07-29 17:27:11.836 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.annotation.DubboConfigAliasPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboConfigAliasPostProcessor] has been registered.
+[2022-07-29 17:27:11.836 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.context.DubboLifecycleComponentApplicationListener]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboLifecycleComponentApplicationListener] has been registered.
+[2022-07-29 17:27:11.837 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.context.DubboBootstrapApplicationListener]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboBootstrapApplicationListener] has been registered.
+[2022-07-29 17:27:11.837 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.config.DubboConfigDefaultPropertyValueBeanPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboConfigDefaultPropertyValueBeanPostProcessor] has been registered.
+[2022-07-29 17:27:11.889 - INFO] .b.f.a.ConfigurationBeanBindingRegistrar : null - The configuration bean definition [name : org.apache.dubbo.config.ApplicationConfig#0, content : Root bean: class [org.apache.dubbo.config.ApplicationConfig]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] has been registered.
+[2022-07-29 17:27:11.889 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [com.alibaba.spring.beans.factory.annotation.ConfigurationBeanBindingPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [configurationBeanBindingPostProcessor] has been registered.
+[2022-07-29 17:27:11.954 - INFO] o.s.c.a.ConfigurationClassPostProcessor  : null - Cannot enhance @Configuration bean definition 'org.apache.dubbo.spring.boot.autoconfigure.DubboAutoConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+[2022-07-29 17:27:12.366 - INFO] o.s.b.w.embedded.tomcat.TomcatWebServer  : null - Tomcat initialized with port(s): 8080 (http)
+[2022-07-29 17:27:12.374 - INFO] o.a.coyote.http11.Http11NioProtocol      : null - Initializing ProtocolHandler ["http-nio-8080"]
+[2022-07-29 17:27:12.375 - INFO] o.apache.catalina.core.StandardService   : null - Starting service [Tomcat]
+[2022-07-29 17:27:12.375 - INFO] org.apache.catalina.core.StandardEngine  : null - Starting Servlet engine: [Apache Tomcat/9.0.33]
+[2022-07-29 17:27:12.455 - INFO] o.a.c.c.C.[Tomcat].[localhost].[/]       : null - Initializing Spring embedded WebApplicationContext
+[2022-07-29 17:27:12.455 - INFO] o.s.web.context.ContextLoader            : null - Root WebApplicationContext: initialization completed in 1088 ms
+[2022-07-29 17:27:12.570 - WARN] ConfigServletWebServerApplicationContext : null - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestLimitInterceptor': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'IRedisFactoryImpl' defined in file [/Users/linhao/IdeaProjects/my-github/concurrence-programming-lession/target/classes/并发编程14/限流组件/redis/impl/IRedisFactoryImpl.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type '并发编程14.限流组件.redis.impl.RedisProperties' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+[2022-07-29 17:27:12.570 - INFO] f.a.ReferenceAnnotationBeanPostProcessor : null - class org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor was destroying!
+[2022-07-29 17:27:12.572 - INFO] o.apache.catalina.core.StandardService   : null - Stopping service [Tomcat]
+[2022-07-29 17:27:12.582 - INFO] ConditionEvaluationReportLoggingListener : null - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[2022-07-29 17:27:12.676 -ERROR] o.s.b.d.LoggingFailureAnalysisReporter   : null - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in 并发编程14.限流组件.redis.impl.IRedisFactoryImpl required a bean of type '并发编程14.限流组件.redis.impl.RedisProperties' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type '并发编程14.限流组件.redis.impl.RedisProperties' in your configuration.
+
+[2022-07-29 17:27:12.681 - INFO] o.apache.dubbo.config.DubboShutdownHook  : null -  [DUBBO] Run shutdown hook now., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:27:12.684 - INFO] o.a.d.r.support.AbstractRegistryFactory  : null -  [DUBBO] Close all registries [], dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:27:12.686 - INFO] o.a.d.c.e.listener.LoggingEventListener  : null -  [DUBBO] Dubbo Service has been destroyed., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:27:35.503 - INFO] o.a.dubbo.common.logger.LoggerFactory    : null - using logger: org.apache.dubbo.common.logger.slf4j.Slf4jLoggerAdapter
+[2022-07-29 17:27:35.513 - INFO] d.s.b.c.e.WelcomeLogoApplicationListener : null - 
+
+ :: Dubbo Spring Boot (v2.7.8) : https://github.com/apache/dubbo-spring-boot-project
+ :: Dubbo (v2.7.8) : https://github.com/apache/dubbo
+ :: Discuss group : dev@dubbo.apache.org
+
+[2022-07-29 17:27:35.516 - INFO] e.OverrideDubboConfigApplicationListener : null - Dubbo Config was overridden by externalized configuration {dubbo.application.name=dubboConsumer, dubbo.application.qos-enable=false, dubbo.config.multiple=true}
+[2022-07-29 17:27:35.608 - INFO] 并发编程14.限流组件.Application                  : null - Starting Application on idea-MacBook-Pro.local with PID 23131 (/Users/linhao/IdeaProjects/my-github/concurrence-programming-lession/target/classes started by linhao in /Users/linhao/IdeaProjects/my-github/concurrence-programming-lession)
+[2022-07-29 17:27:35.608 - INFO] 并发编程14.限流组件.Application                  : null - The following profiles are active: consumer
+[2022-07-29 17:27:36.098 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [referenceAnnotationBeanPostProcessor] has been registered.
+[2022-07-29 17:27:36.098 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.annotation.DubboConfigAliasPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboConfigAliasPostProcessor] has been registered.
+[2022-07-29 17:27:36.099 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.context.DubboLifecycleComponentApplicationListener]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboLifecycleComponentApplicationListener] has been registered.
+[2022-07-29 17:27:36.099 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.context.DubboBootstrapApplicationListener]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboBootstrapApplicationListener] has been registered.
+[2022-07-29 17:27:36.100 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.config.DubboConfigDefaultPropertyValueBeanPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboConfigDefaultPropertyValueBeanPostProcessor] has been registered.
+[2022-07-29 17:27:36.154 - INFO] .b.f.a.ConfigurationBeanBindingRegistrar : null - The configuration bean definition [name : org.apache.dubbo.config.ApplicationConfig#0, content : Root bean: class [org.apache.dubbo.config.ApplicationConfig]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] has been registered.
+[2022-07-29 17:27:36.154 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [com.alibaba.spring.beans.factory.annotation.ConfigurationBeanBindingPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [configurationBeanBindingPostProcessor] has been registered.
+[2022-07-29 17:27:36.216 - INFO] o.s.c.a.ConfigurationClassPostProcessor  : null - Cannot enhance @Configuration bean definition 'org.apache.dubbo.spring.boot.autoconfigure.DubboAutoConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+[2022-07-29 17:27:36.611 - INFO] o.s.b.w.embedded.tomcat.TomcatWebServer  : null - Tomcat initialized with port(s): 8080 (http)
+[2022-07-29 17:27:36.618 - INFO] o.a.coyote.http11.Http11NioProtocol      : null - Initializing ProtocolHandler ["http-nio-8080"]
+[2022-07-29 17:27:36.619 - INFO] o.apache.catalina.core.StandardService   : null - Starting service [Tomcat]
+[2022-07-29 17:27:36.619 - INFO] org.apache.catalina.core.StandardEngine  : null - Starting Servlet engine: [Apache Tomcat/9.0.33]
+[2022-07-29 17:27:36.674 - INFO] o.a.c.c.C.[Tomcat].[localhost].[/]       : null - Initializing Spring embedded WebApplicationContext
+[2022-07-29 17:27:36.674 - INFO] o.s.web.context.ContextLoader            : null - Root WebApplicationContext: initialization completed in 1031 ms
+[2022-07-29 17:27:36.986 - INFO] o.s.s.concurrent.ThreadPoolTaskExecutor  : null - Initializing ExecutorService 'applicationTaskExecutor'
+[2022-07-29 17:27:37.289 - INFO] .a.ConfigurationBeanBindingPostProcessor : null - The configuration bean [<dubbo:application qosEnable="false" hostname="idea-MacBook-Pro.local" name="dubboConsumer" />] have been binding by the configuration properties [{name=dubboConsumer, qos-enable=false}]
+[2022-07-29 17:27:37.356 - INFO] o.a.d.c.utils.ConfigValidationUtils      : null -  [DUBBO] There's no valid monitor config found, if you want to open monitor statistics for Dubbo, please make sure your monitor is configured properly., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:27:37.446 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap has been initialized!, dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:27:37.446 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is starting..., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:27:37.451 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is ready., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:27:37.451 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap has started., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:27:37.454 - INFO] o.a.coyote.http11.Http11NioProtocol      : null - Starting ProtocolHandler ["http-nio-8080"]
+[2022-07-29 17:27:37.483 - INFO] o.s.b.w.embedded.tomcat.TomcatWebServer  : null - Tomcat started on port(s): 8080 (http) with context path ''
+[2022-07-29 17:27:37.487 - INFO] 并发编程14.限流组件.Application                  : null - Started Application in 2.283 seconds (JVM running for 2.743)
+[2022-07-29 17:28:00.242 - INFO] o.a.c.c.C.[Tomcat].[localhost].[/]       : null - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2022-07-29 17:28:00.243 - INFO] o.s.web.servlet.DispatcherServlet        : null - Initializing Servlet 'dispatcherServlet'
+[2022-07-29 17:28:00.257 - INFO] o.s.web.servlet.DispatcherServlet        : null - Completed initialization in 14 ms
+[2022-07-29 17:28:00.277 -ERROR] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : null - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at 并发编程14.限流组件.config.RequestLimitInterceptor.preHandle(RequestLimitInterceptor.java:61)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:141)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1035)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[2022-07-29 17:28:14.335 -ERROR] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : null - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at 并发编程14.限流组件.config.RequestLimitInterceptor.preHandle(RequestLimitInterceptor.java:61)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:141)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1035)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[2022-07-29 17:28:22.694 - INFO] o.apache.dubbo.config.DubboShutdownHook  : null -  [DUBBO] Run shutdown hook now., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:28:22.697 - INFO] o.a.d.c.e.listener.LoggingEventListener  : null -  [DUBBO] Dubbo Service has been destroyed., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:28:22.698 - INFO] o.a.d.r.support.AbstractRegistryFactory  : null -  [DUBBO] Close all registries [], dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:28:22.707 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is about to shutdown..., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:28:22.709 - INFO] o.s.s.concurrent.ThreadPoolTaskExecutor  : null - Shutting down ExecutorService 'applicationTaskExecutor'
+[2022-07-29 17:28:22.709 - INFO] f.a.ReferenceAnnotationBeanPostProcessor : null - class org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor was destroying!
+[2022-07-29 17:28:26.958 - INFO] o.a.dubbo.common.logger.LoggerFactory    : null - using logger: org.apache.dubbo.common.logger.slf4j.Slf4jLoggerAdapter
+[2022-07-29 17:28:26.969 - INFO] d.s.b.c.e.WelcomeLogoApplicationListener : null - 
+
+ :: Dubbo Spring Boot (v2.7.8) : https://github.com/apache/dubbo-spring-boot-project
+ :: Dubbo (v2.7.8) : https://github.com/apache/dubbo
+ :: Discuss group : dev@dubbo.apache.org
+
+[2022-07-29 17:28:26.984 - INFO] e.OverrideDubboConfigApplicationListener : null - Dubbo Config was overridden by externalized configuration {dubbo.application.name=dubboConsumer, dubbo.application.qos-enable=false, dubbo.config.multiple=true}
+[2022-07-29 17:28:27.110 - INFO] 并发编程14.限流组件.Application                  : null - Starting Application on idea-MacBook-Pro.local with PID 23154 (/Users/linhao/IdeaProjects/my-github/concurrence-programming-lession/target/classes started by linhao in /Users/linhao/IdeaProjects/my-github/concurrence-programming-lession)
+[2022-07-29 17:28:27.111 - INFO] 并发编程14.限流组件.Application                  : null - The following profiles are active: consumer
+[2022-07-29 17:28:27.585 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [referenceAnnotationBeanPostProcessor] has been registered.
+[2022-07-29 17:28:27.586 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.annotation.DubboConfigAliasPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboConfigAliasPostProcessor] has been registered.
+[2022-07-29 17:28:27.586 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.context.DubboLifecycleComponentApplicationListener]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboLifecycleComponentApplicationListener] has been registered.
+[2022-07-29 17:28:27.587 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.context.DubboBootstrapApplicationListener]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboBootstrapApplicationListener] has been registered.
+[2022-07-29 17:28:27.587 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.config.DubboConfigDefaultPropertyValueBeanPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboConfigDefaultPropertyValueBeanPostProcessor] has been registered.
+[2022-07-29 17:28:27.638 - INFO] .b.f.a.ConfigurationBeanBindingRegistrar : null - The configuration bean definition [name : org.apache.dubbo.config.ApplicationConfig#0, content : Root bean: class [org.apache.dubbo.config.ApplicationConfig]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] has been registered.
+[2022-07-29 17:28:27.638 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [com.alibaba.spring.beans.factory.annotation.ConfigurationBeanBindingPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [configurationBeanBindingPostProcessor] has been registered.
+[2022-07-29 17:28:27.696 - INFO] o.s.c.a.ConfigurationClassPostProcessor  : null - Cannot enhance @Configuration bean definition 'org.apache.dubbo.spring.boot.autoconfigure.DubboAutoConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+[2022-07-29 17:28:28.098 - INFO] o.s.b.w.embedded.tomcat.TomcatWebServer  : null - Tomcat initialized with port(s): 8080 (http)
+[2022-07-29 17:28:28.105 - INFO] o.a.coyote.http11.Http11NioProtocol      : null - Initializing ProtocolHandler ["http-nio-8080"]
+[2022-07-29 17:28:28.106 - INFO] o.apache.catalina.core.StandardService   : null - Starting service [Tomcat]
+[2022-07-29 17:28:28.106 - INFO] org.apache.catalina.core.StandardEngine  : null - Starting Servlet engine: [Apache Tomcat/9.0.33]
+[2022-07-29 17:28:28.172 - INFO] o.a.c.c.C.[Tomcat].[localhost].[/]       : null - Initializing Spring embedded WebApplicationContext
+[2022-07-29 17:28:28.173 - INFO] o.s.web.context.ContextLoader            : null - Root WebApplicationContext: initialization completed in 1022 ms
+[2022-07-29 17:28:28.497 - INFO] o.s.s.concurrent.ThreadPoolTaskExecutor  : null - Initializing ExecutorService 'applicationTaskExecutor'
+[2022-07-29 17:28:28.805 - INFO] .a.ConfigurationBeanBindingPostProcessor : null - The configuration bean [<dubbo:application qosEnable="false" hostname="idea-MacBook-Pro.local" name="dubboConsumer" />] have been binding by the configuration properties [{name=dubboConsumer, qos-enable=false}]
+[2022-07-29 17:28:28.874 - INFO] o.a.d.c.utils.ConfigValidationUtils      : null -  [DUBBO] There's no valid monitor config found, if you want to open monitor statistics for Dubbo, please make sure your monitor is configured properly., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:28:28.968 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap has been initialized!, dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:28:28.968 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is starting..., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:28:28.971 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is ready., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:28:28.971 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap has started., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:28:28.974 - INFO] o.a.coyote.http11.Http11NioProtocol      : null - Starting ProtocolHandler ["http-nio-8080"]
+[2022-07-29 17:28:29.007 - INFO] o.s.b.w.embedded.tomcat.TomcatWebServer  : null - Tomcat started on port(s): 8080 (http) with context path ''
+[2022-07-29 17:28:29.011 - INFO] 并发编程14.限流组件.Application                  : null - Started Application in 2.503 seconds (JVM running for 3.381)
+[2022-07-29 17:28:35.040 - INFO] o.a.c.c.C.[Tomcat].[localhost].[/]       : null - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2022-07-29 17:28:35.041 - INFO] o.s.web.servlet.DispatcherServlet        : null - Initializing Servlet 'dispatcherServlet'
+[2022-07-29 17:28:35.055 - INFO] o.s.web.servlet.DispatcherServlet        : null - Completed initialization in 14 ms
+[2022-07-29 17:28:39.636 -ERROR] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : null - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at 并发编程14.限流组件.config.RequestLimitInterceptor.preHandle(RequestLimitInterceptor.java:61)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:141)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1035)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[2022-07-29 17:28:49.393 -ERROR] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : null - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at 并发编程14.限流组件.config.RequestLimitInterceptor.preHandle(RequestLimitInterceptor.java:61)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:141)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1035)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[2022-07-29 17:29:21.328 - INFO] o.apache.dubbo.config.DubboShutdownHook  : null -  [DUBBO] Run shutdown hook now., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:29:21.330 - INFO] o.a.d.r.support.AbstractRegistryFactory  : null -  [DUBBO] Close all registries [], dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:29:21.331 - INFO] o.a.d.c.e.listener.LoggingEventListener  : null -  [DUBBO] Dubbo Service has been destroyed., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:29:21.337 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is about to shutdown..., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:29:21.338 - INFO] o.s.s.concurrent.ThreadPoolTaskExecutor  : null - Shutting down ExecutorService 'applicationTaskExecutor'
+[2022-07-29 17:29:21.339 - INFO] f.a.ReferenceAnnotationBeanPostProcessor : null - class org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor was destroying!
+[2022-07-29 17:29:24.487 - INFO] o.a.dubbo.common.logger.LoggerFactory    : null - using logger: org.apache.dubbo.common.logger.slf4j.Slf4jLoggerAdapter
+[2022-07-29 17:29:24.497 - INFO] d.s.b.c.e.WelcomeLogoApplicationListener : null - 
+
+ :: Dubbo Spring Boot (v2.7.8) : https://github.com/apache/dubbo-spring-boot-project
+ :: Dubbo (v2.7.8) : https://github.com/apache/dubbo
+ :: Discuss group : dev@dubbo.apache.org
+
+[2022-07-29 17:29:24.501 - INFO] e.OverrideDubboConfigApplicationListener : null - Dubbo Config was overridden by externalized configuration {dubbo.application.name=dubboConsumer, dubbo.application.qos-enable=false, dubbo.config.multiple=true}
+[2022-07-29 17:29:24.599 - INFO] 并发编程14.限流组件.Application                  : null - Starting Application on idea-MacBook-Pro.local with PID 23171 (/Users/linhao/IdeaProjects/my-github/concurrence-programming-lession/target/classes started by linhao in /Users/linhao/IdeaProjects/my-github/concurrence-programming-lession)
+[2022-07-29 17:29:24.599 - INFO] 并发编程14.限流组件.Application                  : null - The following profiles are active: consumer
+[2022-07-29 17:29:25.038 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [referenceAnnotationBeanPostProcessor] has been registered.
+[2022-07-29 17:29:25.038 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.annotation.DubboConfigAliasPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboConfigAliasPostProcessor] has been registered.
+[2022-07-29 17:29:25.039 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.context.DubboLifecycleComponentApplicationListener]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboLifecycleComponentApplicationListener] has been registered.
+[2022-07-29 17:29:25.039 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.context.DubboBootstrapApplicationListener]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboBootstrapApplicationListener] has been registered.
+[2022-07-29 17:29:25.039 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.config.DubboConfigDefaultPropertyValueBeanPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboConfigDefaultPropertyValueBeanPostProcessor] has been registered.
+[2022-07-29 17:29:25.084 - INFO] .b.f.a.ConfigurationBeanBindingRegistrar : null - The configuration bean definition [name : org.apache.dubbo.config.ApplicationConfig#0, content : Root bean: class [org.apache.dubbo.config.ApplicationConfig]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] has been registered.
+[2022-07-29 17:29:25.084 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [com.alibaba.spring.beans.factory.annotation.ConfigurationBeanBindingPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [configurationBeanBindingPostProcessor] has been registered.
+[2022-07-29 17:29:25.133 - INFO] o.s.c.a.ConfigurationClassPostProcessor  : null - Cannot enhance @Configuration bean definition 'org.apache.dubbo.spring.boot.autoconfigure.DubboAutoConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+[2022-07-29 17:29:25.510 - INFO] o.s.b.w.embedded.tomcat.TomcatWebServer  : null - Tomcat initialized with port(s): 8080 (http)
+[2022-07-29 17:29:25.518 - INFO] o.a.coyote.http11.Http11NioProtocol      : null - Initializing ProtocolHandler ["http-nio-8080"]
+[2022-07-29 17:29:25.518 - INFO] o.apache.catalina.core.StandardService   : null - Starting service [Tomcat]
+[2022-07-29 17:29:25.519 - INFO] org.apache.catalina.core.StandardEngine  : null - Starting Servlet engine: [Apache Tomcat/9.0.33]
+[2022-07-29 17:29:25.589 - INFO] o.a.c.c.C.[Tomcat].[localhost].[/]       : null - Initializing Spring embedded WebApplicationContext
+[2022-07-29 17:29:25.589 - INFO] o.s.web.context.ContextLoader            : null - Root WebApplicationContext: initialization completed in 924 ms
+[2022-07-29 17:29:25.937 - INFO] o.s.s.concurrent.ThreadPoolTaskExecutor  : null - Initializing ExecutorService 'applicationTaskExecutor'
+[2022-07-29 17:29:26.215 - INFO] .a.ConfigurationBeanBindingPostProcessor : null - The configuration bean [<dubbo:application name="dubboConsumer" qosEnable="false" hostname="idea-MacBook-Pro.local" />] have been binding by the configuration properties [{name=dubboConsumer, qos-enable=false}]
+[2022-07-29 17:29:26.276 - INFO] o.a.d.c.utils.ConfigValidationUtils      : null -  [DUBBO] There's no valid monitor config found, if you want to open monitor statistics for Dubbo, please make sure your monitor is configured properly., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:29:26.356 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap has been initialized!, dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:29:26.356 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is starting..., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:29:26.366 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is ready., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:29:26.366 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap has started., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:29:26.368 - INFO] o.a.coyote.http11.Http11NioProtocol      : null - Starting ProtocolHandler ["http-nio-8080"]
+[2022-07-29 17:29:26.396 - INFO] o.s.b.w.embedded.tomcat.TomcatWebServer  : null - Tomcat started on port(s): 8080 (http) with context path ''
+[2022-07-29 17:29:26.399 - INFO] 并发编程14.限流组件.Application                  : null - Started Application in 2.225 seconds (JVM running for 2.756)
+[2022-07-29 17:29:29.629 - INFO] o.a.c.c.C.[Tomcat].[localhost].[/]       : null - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2022-07-29 17:29:29.630 - INFO] o.s.web.servlet.DispatcherServlet        : null - Initializing Servlet 'dispatcherServlet'
+[2022-07-29 17:29:29.660 - INFO] o.s.web.servlet.DispatcherServlet        : null - Completed initialization in 30 ms
+[2022-07-29 17:29:36.982 -ERROR] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : null - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at 并发编程14.限流组件.config.RequestLimitInterceptor.preHandle(RequestLimitInterceptor.java:65)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:141)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1035)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[2022-07-29 17:30:28.700 - INFO] o.apache.dubbo.config.DubboShutdownHook  : null -  [DUBBO] Run shutdown hook now., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:30:28.702 - INFO] o.a.d.c.e.listener.LoggingEventListener  : null -  [DUBBO] Dubbo Service has been destroyed., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:30:28.703 - INFO] o.a.d.r.support.AbstractRegistryFactory  : null -  [DUBBO] Close all registries [], dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:30:28.710 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is about to shutdown..., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:30:28.711 - INFO] o.s.s.concurrent.ThreadPoolTaskExecutor  : null - Shutting down ExecutorService 'applicationTaskExecutor'
+[2022-07-29 17:30:28.712 - INFO] f.a.ReferenceAnnotationBeanPostProcessor : null - class org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor was destroying!
+[2022-07-29 17:30:31.960 - INFO] o.a.dubbo.common.logger.LoggerFactory    : null - using logger: org.apache.dubbo.common.logger.slf4j.Slf4jLoggerAdapter
+[2022-07-29 17:30:31.968 - INFO] d.s.b.c.e.WelcomeLogoApplicationListener : null - 
+
+ :: Dubbo Spring Boot (v2.7.8) : https://github.com/apache/dubbo-spring-boot-project
+ :: Dubbo (v2.7.8) : https://github.com/apache/dubbo
+ :: Discuss group : dev@dubbo.apache.org
+
+[2022-07-29 17:30:31.971 - INFO] e.OverrideDubboConfigApplicationListener : null - Dubbo Config was overridden by externalized configuration {dubbo.application.name=dubboConsumer, dubbo.application.qos-enable=false, dubbo.config.multiple=true}
+[2022-07-29 17:30:32.055 - INFO] 并发编程14.限流组件.Application                  : null - Starting Application on idea-MacBook-Pro.local with PID 23192 (/Users/linhao/IdeaProjects/my-github/concurrence-programming-lession/target/classes started by linhao in /Users/linhao/IdeaProjects/my-github/concurrence-programming-lession)
+[2022-07-29 17:30:32.056 - INFO] 并发编程14.限流组件.Application                  : null - The following profiles are active: consumer
+[2022-07-29 17:30:32.475 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [referenceAnnotationBeanPostProcessor] has been registered.
+[2022-07-29 17:30:32.477 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.annotation.DubboConfigAliasPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboConfigAliasPostProcessor] has been registered.
+[2022-07-29 17:30:32.478 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.context.DubboLifecycleComponentApplicationListener]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboLifecycleComponentApplicationListener] has been registered.
+[2022-07-29 17:30:32.478 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.context.DubboBootstrapApplicationListener]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboBootstrapApplicationListener] has been registered.
+[2022-07-29 17:30:32.479 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.config.DubboConfigDefaultPropertyValueBeanPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboConfigDefaultPropertyValueBeanPostProcessor] has been registered.
+[2022-07-29 17:30:32.523 - INFO] .b.f.a.ConfigurationBeanBindingRegistrar : null - The configuration bean definition [name : org.apache.dubbo.config.ApplicationConfig#0, content : Root bean: class [org.apache.dubbo.config.ApplicationConfig]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] has been registered.
+[2022-07-29 17:30:32.524 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [com.alibaba.spring.beans.factory.annotation.ConfigurationBeanBindingPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [configurationBeanBindingPostProcessor] has been registered.
+[2022-07-29 17:30:32.569 - INFO] o.s.c.a.ConfigurationClassPostProcessor  : null - Cannot enhance @Configuration bean definition 'org.apache.dubbo.spring.boot.autoconfigure.DubboAutoConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+[2022-07-29 17:30:32.907 - INFO] o.s.b.w.embedded.tomcat.TomcatWebServer  : null - Tomcat initialized with port(s): 8080 (http)
+[2022-07-29 17:30:32.914 - INFO] o.a.coyote.http11.Http11NioProtocol      : null - Initializing ProtocolHandler ["http-nio-8080"]
+[2022-07-29 17:30:32.915 - INFO] o.apache.catalina.core.StandardService   : null - Starting service [Tomcat]
+[2022-07-29 17:30:32.915 - INFO] org.apache.catalina.core.StandardEngine  : null - Starting Servlet engine: [Apache Tomcat/9.0.33]
+[2022-07-29 17:30:32.975 - INFO] o.a.c.c.C.[Tomcat].[localhost].[/]       : null - Initializing Spring embedded WebApplicationContext
+[2022-07-29 17:30:32.976 - INFO] o.s.web.context.ContextLoader            : null - Root WebApplicationContext: initialization completed in 858 ms
+[2022-07-29 17:30:33.262 - INFO] o.s.s.concurrent.ThreadPoolTaskExecutor  : null - Initializing ExecutorService 'applicationTaskExecutor'
+[2022-07-29 17:30:33.594 - INFO] .a.ConfigurationBeanBindingPostProcessor : null - The configuration bean [<dubbo:application name="dubboConsumer" qosEnable="false" hostname="idea-MacBook-Pro.local" />] have been binding by the configuration properties [{name=dubboConsumer, qos-enable=false}]
+[2022-07-29 17:30:33.668 - INFO] o.a.d.c.utils.ConfigValidationUtils      : null -  [DUBBO] There's no valid monitor config found, if you want to open monitor statistics for Dubbo, please make sure your monitor is configured properly., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:30:33.770 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap has been initialized!, dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:30:33.771 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is starting..., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:30:33.774 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is ready., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:30:33.774 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap has started., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:30:33.776 - INFO] o.a.coyote.http11.Http11NioProtocol      : null - Starting ProtocolHandler ["http-nio-8080"]
+[2022-07-29 17:30:33.804 - INFO] o.s.b.w.embedded.tomcat.TomcatWebServer  : null - Tomcat started on port(s): 8080 (http) with context path ''
+[2022-07-29 17:30:33.807 - INFO] 并发编程14.限流组件.Application                  : null - Started Application in 2.16 seconds (JVM running for 2.648)
+[2022-07-29 17:30:35.448 - INFO] o.a.c.c.C.[Tomcat].[localhost].[/]       : null - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2022-07-29 17:30:35.449 - INFO] o.s.web.servlet.DispatcherServlet        : null - Initializing Servlet 'dispatcherServlet'
+[2022-07-29 17:30:35.468 - INFO] o.s.web.servlet.DispatcherServlet        : null - Completed initialization in 19 ms
+[2022-07-29 17:30:42.563 -ERROR] 并发编程14.限流组件.redis.impl.RedisServiceImpl  : null - jedis execLua has error, error is 
+redis.clients.jedis.exceptions.JedisDataException: ERR Error running script (call to f_eb842884fa3af0a859b701187730ce7829ca264b): @enable_strict_lua:15: user_script:2: Script attempted to access nonexistent global variable 'ARGS'
+	at redis.clients.jedis.Protocol.processError(Protocol.java:131)
+	at redis.clients.jedis.Protocol.process(Protocol.java:165)
+	at redis.clients.jedis.Protocol.read(Protocol.java:219)
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:309)
+	at redis.clients.jedis.Connection.getOne(Connection.java:291)
+	at redis.clients.jedis.Jedis.getEvalResult(Jedis.java:2835)
+	at redis.clients.jedis.Jedis.evalsha(Jedis.java:2863)
+	at redis.clients.jedis.Jedis.evalsha(Jedis.java:2856)
+	at 并发编程14.限流组件.redis.impl.RedisServiceImpl.execLua(RedisServiceImpl.java:179)
+	at 并发编程14.限流组件.config.RequestLimitInterceptor.preHandle(RequestLimitInterceptor.java:65)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:141)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1035)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[2022-07-29 17:30:45.408 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,2,10
+[2022-07-29 17:30:54.496 -ERROR] 并发编程14.限流组件.redis.impl.RedisServiceImpl  : null - jedis execLua has error, error is 
+redis.clients.jedis.exceptions.JedisDataException: ERR Error running script (call to f_eb842884fa3af0a859b701187730ce7829ca264b): @enable_strict_lua:15: user_script:2: Script attempted to access nonexistent global variable 'ARGS'
+	at redis.clients.jedis.Protocol.processError(Protocol.java:131)
+	at redis.clients.jedis.Protocol.process(Protocol.java:165)
+	at redis.clients.jedis.Protocol.read(Protocol.java:219)
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:309)
+	at redis.clients.jedis.Connection.getOne(Connection.java:291)
+	at redis.clients.jedis.Jedis.getEvalResult(Jedis.java:2835)
+	at redis.clients.jedis.Jedis.evalsha(Jedis.java:2863)
+	at redis.clients.jedis.Jedis.evalsha(Jedis.java:2856)
+	at 并发编程14.限流组件.redis.impl.RedisServiceImpl.execLua(RedisServiceImpl.java:179)
+	at 并发编程14.限流组件.config.RequestLimitInterceptor.preHandle(RequestLimitInterceptor.java:65)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:141)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1035)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[2022-07-29 17:30:58.060 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,2,10
+[2022-07-29 17:32:20.590 - INFO] o.apache.dubbo.config.DubboShutdownHook  : null -  [DUBBO] Run shutdown hook now., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:32:20.593 - INFO] o.a.d.c.e.listener.LoggingEventListener  : null -  [DUBBO] Dubbo Service has been destroyed., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:32:20.594 - INFO] o.a.d.r.support.AbstractRegistryFactory  : null -  [DUBBO] Close all registries [], dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:32:20.601 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is about to shutdown..., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:32:20.603 - INFO] o.s.s.concurrent.ThreadPoolTaskExecutor  : null - Shutting down ExecutorService 'applicationTaskExecutor'
+[2022-07-29 17:32:20.603 - INFO] f.a.ReferenceAnnotationBeanPostProcessor : null - class org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor was destroying!
+[2022-07-29 17:32:23.707 - INFO] o.a.dubbo.common.logger.LoggerFactory    : null - using logger: org.apache.dubbo.common.logger.slf4j.Slf4jLoggerAdapter
+[2022-07-29 17:32:23.715 - INFO] d.s.b.c.e.WelcomeLogoApplicationListener : null - 
+
+ :: Dubbo Spring Boot (v2.7.8) : https://github.com/apache/dubbo-spring-boot-project
+ :: Dubbo (v2.7.8) : https://github.com/apache/dubbo
+ :: Discuss group : dev@dubbo.apache.org
+
+[2022-07-29 17:32:23.719 - INFO] e.OverrideDubboConfigApplicationListener : null - Dubbo Config was overridden by externalized configuration {dubbo.application.name=dubboConsumer, dubbo.application.qos-enable=false, dubbo.config.multiple=true}
+[2022-07-29 17:32:23.811 - INFO] 并发编程14.限流组件.Application                  : null - Starting Application on idea-MacBook-Pro.local with PID 23247 (/Users/linhao/IdeaProjects/my-github/concurrence-programming-lession/target/classes started by linhao in /Users/linhao/IdeaProjects/my-github/concurrence-programming-lession)
+[2022-07-29 17:32:23.811 - INFO] 并发编程14.限流组件.Application                  : null - The following profiles are active: consumer
+[2022-07-29 17:32:24.256 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [referenceAnnotationBeanPostProcessor] has been registered.
+[2022-07-29 17:32:24.257 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.annotation.DubboConfigAliasPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboConfigAliasPostProcessor] has been registered.
+[2022-07-29 17:32:24.257 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.context.DubboLifecycleComponentApplicationListener]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboLifecycleComponentApplicationListener] has been registered.
+[2022-07-29 17:32:24.258 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.context.DubboBootstrapApplicationListener]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboBootstrapApplicationListener] has been registered.
+[2022-07-29 17:32:24.259 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.config.DubboConfigDefaultPropertyValueBeanPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboConfigDefaultPropertyValueBeanPostProcessor] has been registered.
+[2022-07-29 17:32:24.310 - INFO] .b.f.a.ConfigurationBeanBindingRegistrar : null - The configuration bean definition [name : org.apache.dubbo.config.ApplicationConfig#0, content : Root bean: class [org.apache.dubbo.config.ApplicationConfig]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] has been registered.
+[2022-07-29 17:32:24.310 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [com.alibaba.spring.beans.factory.annotation.ConfigurationBeanBindingPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [configurationBeanBindingPostProcessor] has been registered.
+[2022-07-29 17:32:24.361 - INFO] o.s.c.a.ConfigurationClassPostProcessor  : null - Cannot enhance @Configuration bean definition 'org.apache.dubbo.spring.boot.autoconfigure.DubboAutoConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+[2022-07-29 17:32:24.738 - INFO] o.s.b.w.embedded.tomcat.TomcatWebServer  : null - Tomcat initialized with port(s): 8080 (http)
+[2022-07-29 17:32:24.745 - INFO] o.a.coyote.http11.Http11NioProtocol      : null - Initializing ProtocolHandler ["http-nio-8080"]
+[2022-07-29 17:32:24.746 - INFO] o.apache.catalina.core.StandardService   : null - Starting service [Tomcat]
+[2022-07-29 17:32:24.746 - INFO] org.apache.catalina.core.StandardEngine  : null - Starting Servlet engine: [Apache Tomcat/9.0.33]
+[2022-07-29 17:32:24.815 - INFO] o.a.c.c.C.[Tomcat].[localhost].[/]       : null - Initializing Spring embedded WebApplicationContext
+[2022-07-29 17:32:24.815 - INFO] o.s.web.context.ContextLoader            : null - Root WebApplicationContext: initialization completed in 937 ms
+[2022-07-29 17:32:25.129 - INFO] o.s.s.concurrent.ThreadPoolTaskExecutor  : null - Initializing ExecutorService 'applicationTaskExecutor'
+[2022-07-29 17:32:25.428 - INFO] .a.ConfigurationBeanBindingPostProcessor : null - The configuration bean [<dubbo:application qosEnable="false" hostname="idea-MacBook-Pro.local" name="dubboConsumer" />] have been binding by the configuration properties [{name=dubboConsumer, qos-enable=false}]
+[2022-07-29 17:32:25.491 - INFO] o.a.d.c.utils.ConfigValidationUtils      : null -  [DUBBO] There's no valid monitor config found, if you want to open monitor statistics for Dubbo, please make sure your monitor is configured properly., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:32:25.518 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap has been initialized!, dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:32:25.518 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is starting..., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:32:25.573 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is ready., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:32:25.573 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap has started., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:32:25.575 - INFO] o.a.coyote.http11.Http11NioProtocol      : null - Starting ProtocolHandler ["http-nio-8080"]
+[2022-07-29 17:32:25.603 - INFO] o.s.b.w.embedded.tomcat.TomcatWebServer  : null - Tomcat started on port(s): 8080 (http) with context path ''
+[2022-07-29 17:32:25.607 - INFO] 并发编程14.限流组件.Application                  : null - Started Application in 2.183 seconds (JVM running for 2.723)
+[2022-07-29 17:32:35.889 - INFO] o.a.c.c.C.[Tomcat].[localhost].[/]       : null - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2022-07-29 17:32:35.890 - INFO] o.s.web.servlet.DispatcherServlet        : null - Initializing Servlet 'dispatcherServlet'
+[2022-07-29 17:32:35.909 - INFO] o.s.web.servlet.DispatcherServlet        : null - Completed initialization in 19 ms
+[2022-07-29 17:32:35.947 -ERROR] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : null - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.ClassCastException: java.lang.Long cannot be cast to java.lang.Integer] with root cause
+java.lang.ClassCastException: java.lang.Long cannot be cast to java.lang.Integer
+	at 并发编程14.限流组件.config.RequestLimitInterceptor.preHandle(RequestLimitInterceptor.java:65)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:141)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1035)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[2022-07-29 17:32:51.574 - INFO] o.apache.dubbo.config.DubboShutdownHook  : null -  [DUBBO] Run shutdown hook now., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:32:51.575 - INFO] o.a.d.c.e.listener.LoggingEventListener  : null -  [DUBBO] Dubbo Service has been destroyed., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:32:51.576 - INFO] o.a.d.r.support.AbstractRegistryFactory  : null -  [DUBBO] Close all registries [], dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:32:51.583 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is about to shutdown..., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:32:51.584 - INFO] o.s.s.concurrent.ThreadPoolTaskExecutor  : null - Shutting down ExecutorService 'applicationTaskExecutor'
+[2022-07-29 17:32:51.584 - INFO] f.a.ReferenceAnnotationBeanPostProcessor : null - class org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor was destroying!
+[2022-07-29 17:32:54.650 - INFO] o.a.dubbo.common.logger.LoggerFactory    : null - using logger: org.apache.dubbo.common.logger.slf4j.Slf4jLoggerAdapter
+[2022-07-29 17:32:54.662 - INFO] d.s.b.c.e.WelcomeLogoApplicationListener : null - 
+
+ :: Dubbo Spring Boot (v2.7.8) : https://github.com/apache/dubbo-spring-boot-project
+ :: Dubbo (v2.7.8) : https://github.com/apache/dubbo
+ :: Discuss group : dev@dubbo.apache.org
+
+[2022-07-29 17:32:54.666 - INFO] e.OverrideDubboConfigApplicationListener : null - Dubbo Config was overridden by externalized configuration {dubbo.application.name=dubboConsumer, dubbo.application.qos-enable=false, dubbo.config.multiple=true}
+[2022-07-29 17:32:54.761 - INFO] 并发编程14.限流组件.Application                  : null - Starting Application on idea-MacBook-Pro.local with PID 23263 (/Users/linhao/IdeaProjects/my-github/concurrence-programming-lession/target/classes started by linhao in /Users/linhao/IdeaProjects/my-github/concurrence-programming-lession)
+[2022-07-29 17:32:54.762 - INFO] 并发编程14.限流组件.Application                  : null - The following profiles are active: consumer
+[2022-07-29 17:32:55.175 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [referenceAnnotationBeanPostProcessor] has been registered.
+[2022-07-29 17:32:55.175 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.annotation.DubboConfigAliasPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboConfigAliasPostProcessor] has been registered.
+[2022-07-29 17:32:55.176 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.context.DubboLifecycleComponentApplicationListener]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboLifecycleComponentApplicationListener] has been registered.
+[2022-07-29 17:32:55.176 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.context.DubboBootstrapApplicationListener]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboBootstrapApplicationListener] has been registered.
+[2022-07-29 17:32:55.177 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.config.DubboConfigDefaultPropertyValueBeanPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboConfigDefaultPropertyValueBeanPostProcessor] has been registered.
+[2022-07-29 17:32:55.221 - INFO] .b.f.a.ConfigurationBeanBindingRegistrar : null - The configuration bean definition [name : org.apache.dubbo.config.ApplicationConfig#0, content : Root bean: class [org.apache.dubbo.config.ApplicationConfig]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] has been registered.
+[2022-07-29 17:32:55.221 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [com.alibaba.spring.beans.factory.annotation.ConfigurationBeanBindingPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [configurationBeanBindingPostProcessor] has been registered.
+[2022-07-29 17:32:55.260 - INFO] o.s.c.a.ConfigurationClassPostProcessor  : null - Cannot enhance @Configuration bean definition 'org.apache.dubbo.spring.boot.autoconfigure.DubboAutoConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+[2022-07-29 17:32:55.556 - INFO] o.s.b.w.embedded.tomcat.TomcatWebServer  : null - Tomcat initialized with port(s): 8080 (http)
+[2022-07-29 17:32:55.563 - INFO] o.a.coyote.http11.Http11NioProtocol      : null - Initializing ProtocolHandler ["http-nio-8080"]
+[2022-07-29 17:32:55.563 - INFO] o.apache.catalina.core.StandardService   : null - Starting service [Tomcat]
+[2022-07-29 17:32:55.563 - INFO] org.apache.catalina.core.StandardEngine  : null - Starting Servlet engine: [Apache Tomcat/9.0.33]
+[2022-07-29 17:32:55.629 - INFO] o.a.c.c.C.[Tomcat].[localhost].[/]       : null - Initializing Spring embedded WebApplicationContext
+[2022-07-29 17:32:55.630 - INFO] o.s.web.context.ContextLoader            : null - Root WebApplicationContext: initialization completed in 800 ms
+[2022-07-29 17:32:55.926 - INFO] o.s.s.concurrent.ThreadPoolTaskExecutor  : null - Initializing ExecutorService 'applicationTaskExecutor'
+[2022-07-29 17:32:56.206 - INFO] .a.ConfigurationBeanBindingPostProcessor : null - The configuration bean [<dubbo:application qosEnable="false" hostname="idea-MacBook-Pro.local" name="dubboConsumer" />] have been binding by the configuration properties [{name=dubboConsumer, qos-enable=false}]
+[2022-07-29 17:32:56.264 - INFO] o.a.d.c.utils.ConfigValidationUtils      : null -  [DUBBO] There's no valid monitor config found, if you want to open monitor statistics for Dubbo, please make sure your monitor is configured properly., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:32:56.348 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap has been initialized!, dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:32:56.348 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is starting..., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:32:56.351 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is ready., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:32:56.351 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap has started., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:32:56.353 - INFO] o.a.coyote.http11.Http11NioProtocol      : null - Starting ProtocolHandler ["http-nio-8080"]
+[2022-07-29 17:32:56.378 - INFO] o.s.b.w.embedded.tomcat.TomcatWebServer  : null - Tomcat started on port(s): 8080 (http) with context path ''
+[2022-07-29 17:32:56.381 - INFO] 并发编程14.限流组件.Application                  : null - Started Application in 2.01 seconds (JVM running for 2.518)
+[2022-07-29 17:32:59.053 - INFO] o.a.c.c.C.[Tomcat].[localhost].[/]       : null - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2022-07-29 17:32:59.054 - INFO] o.s.web.servlet.DispatcherServlet        : null - Initializing Servlet 'dispatcherServlet'
+[2022-07-29 17:32:59.070 - INFO] o.s.web.servlet.DispatcherServlet        : null - Completed initialization in 16 ms
+[2022-07-29 17:33:08.843 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,2,10
+[2022-07-29 17:33:09.090 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,2,10
+[2022-07-29 17:33:09.737 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,2,10
+[2022-07-29 17:33:10.158 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,2,10
+[2022-07-29 17:33:10.437 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,2,10
+[2022-07-29 17:33:10.692 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,2,10
+[2022-07-29 17:33:10.924 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,2,10
+[2022-07-29 17:33:11.143 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,2,10
+[2022-07-29 17:33:11.353 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,2,10
+[2022-07-29 17:33:11.658 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,2,10
+[2022-07-29 17:33:19.735 - INFO] o.apache.dubbo.config.DubboShutdownHook  : null -  [DUBBO] Run shutdown hook now., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:33:19.736 - INFO] o.a.d.c.e.listener.LoggingEventListener  : null -  [DUBBO] Dubbo Service has been destroyed., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:33:19.738 - INFO] o.a.d.r.support.AbstractRegistryFactory  : null -  [DUBBO] Close all registries [], dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:33:19.745 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is about to shutdown..., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:33:19.746 - INFO] o.s.s.concurrent.ThreadPoolTaskExecutor  : null - Shutting down ExecutorService 'applicationTaskExecutor'
+[2022-07-29 17:33:19.746 - INFO] f.a.ReferenceAnnotationBeanPostProcessor : null - class org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor was destroying!
+[2022-07-29 17:33:28.216 - INFO] o.a.dubbo.common.logger.LoggerFactory    : null - using logger: org.apache.dubbo.common.logger.slf4j.Slf4jLoggerAdapter
+[2022-07-29 17:33:28.226 - INFO] d.s.b.c.e.WelcomeLogoApplicationListener : null - 
+
+ :: Dubbo Spring Boot (v2.7.8) : https://github.com/apache/dubbo-spring-boot-project
+ :: Dubbo (v2.7.8) : https://github.com/apache/dubbo
+ :: Discuss group : dev@dubbo.apache.org
+
+[2022-07-29 17:33:28.230 - INFO] e.OverrideDubboConfigApplicationListener : null - Dubbo Config was overridden by externalized configuration {dubbo.application.name=dubboConsumer, dubbo.application.qos-enable=false, dubbo.config.multiple=true}
+[2022-07-29 17:33:28.330 - INFO] 并发编程14.限流组件.Application                  : null - Starting Application on idea-MacBook-Pro.local with PID 23275 (/Users/linhao/IdeaProjects/my-github/concurrence-programming-lession/target/classes started by linhao in /Users/linhao/IdeaProjects/my-github/concurrence-programming-lession)
+[2022-07-29 17:33:28.331 - INFO] 并发编程14.限流组件.Application                  : null - The following profiles are active: consumer
+[2022-07-29 17:33:28.799 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [referenceAnnotationBeanPostProcessor] has been registered.
+[2022-07-29 17:33:28.799 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.annotation.DubboConfigAliasPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboConfigAliasPostProcessor] has been registered.
+[2022-07-29 17:33:28.800 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.context.DubboLifecycleComponentApplicationListener]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboLifecycleComponentApplicationListener] has been registered.
+[2022-07-29 17:33:28.800 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.context.DubboBootstrapApplicationListener]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboBootstrapApplicationListener] has been registered.
+[2022-07-29 17:33:28.801 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.config.DubboConfigDefaultPropertyValueBeanPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboConfigDefaultPropertyValueBeanPostProcessor] has been registered.
+[2022-07-29 17:33:28.848 - INFO] .b.f.a.ConfigurationBeanBindingRegistrar : null - The configuration bean definition [name : org.apache.dubbo.config.ApplicationConfig#0, content : Root bean: class [org.apache.dubbo.config.ApplicationConfig]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] has been registered.
+[2022-07-29 17:33:28.848 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [com.alibaba.spring.beans.factory.annotation.ConfigurationBeanBindingPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [configurationBeanBindingPostProcessor] has been registered.
+[2022-07-29 17:33:28.898 - INFO] o.s.c.a.ConfigurationClassPostProcessor  : null - Cannot enhance @Configuration bean definition 'org.apache.dubbo.spring.boot.autoconfigure.DubboAutoConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+[2022-07-29 17:33:29.247 - INFO] o.s.b.w.embedded.tomcat.TomcatWebServer  : null - Tomcat initialized with port(s): 8080 (http)
+[2022-07-29 17:33:29.255 - INFO] o.a.coyote.http11.Http11NioProtocol      : null - Initializing ProtocolHandler ["http-nio-8080"]
+[2022-07-29 17:33:29.255 - INFO] o.apache.catalina.core.StandardService   : null - Starting service [Tomcat]
+[2022-07-29 17:33:29.256 - INFO] org.apache.catalina.core.StandardEngine  : null - Starting Servlet engine: [Apache Tomcat/9.0.33]
+[2022-07-29 17:33:29.323 - INFO] o.a.c.c.C.[Tomcat].[localhost].[/]       : null - Initializing Spring embedded WebApplicationContext
+[2022-07-29 17:33:29.324 - INFO] o.s.web.context.ContextLoader            : null - Root WebApplicationContext: initialization completed in 925 ms
+[2022-07-29 17:33:29.650 - INFO] o.s.s.concurrent.ThreadPoolTaskExecutor  : null - Initializing ExecutorService 'applicationTaskExecutor'
+[2022-07-29 17:33:29.914 - INFO] .a.ConfigurationBeanBindingPostProcessor : null - The configuration bean [<dubbo:application qosEnable="false" hostname="idea-MacBook-Pro.local" name="dubboConsumer" />] have been binding by the configuration properties [{name=dubboConsumer, qos-enable=false}]
+[2022-07-29 17:33:29.974 - INFO] o.a.d.c.utils.ConfigValidationUtils      : null -  [DUBBO] There's no valid monitor config found, if you want to open monitor statistics for Dubbo, please make sure your monitor is configured properly., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:33:29.988 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap has been initialized!, dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:33:29.988 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is starting..., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:33:30.063 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is ready., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:33:30.063 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap has started., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:33:30.065 - INFO] o.a.coyote.http11.Http11NioProtocol      : null - Starting ProtocolHandler ["http-nio-8080"]
+[2022-07-29 17:33:30.090 - INFO] o.s.b.w.embedded.tomcat.TomcatWebServer  : null - Tomcat started on port(s): 8080 (http) with context path ''
+[2022-07-29 17:33:30.093 - INFO] 并发编程14.限流组件.Application                  : null - Started Application in 2.175 seconds (JVM running for 2.684)
+[2022-07-29 17:34:11.756 - INFO] o.apache.dubbo.config.DubboShutdownHook  : null -  [DUBBO] Run shutdown hook now., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:34:11.758 - INFO] o.a.d.c.e.listener.LoggingEventListener  : null -  [DUBBO] Dubbo Service has been destroyed., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:34:11.759 - INFO] o.a.d.r.support.AbstractRegistryFactory  : null -  [DUBBO] Close all registries [], dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:34:11.766 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is about to shutdown..., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:34:11.767 - INFO] o.s.s.concurrent.ThreadPoolTaskExecutor  : null - Shutting down ExecutorService 'applicationTaskExecutor'
+[2022-07-29 17:34:11.767 - INFO] f.a.ReferenceAnnotationBeanPostProcessor : null - class org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor was destroying!
+[2022-07-29 17:34:14.768 - INFO] o.a.dubbo.common.logger.LoggerFactory    : null - using logger: org.apache.dubbo.common.logger.slf4j.Slf4jLoggerAdapter
+[2022-07-29 17:34:14.776 - INFO] d.s.b.c.e.WelcomeLogoApplicationListener : null - 
+
+ :: Dubbo Spring Boot (v2.7.8) : https://github.com/apache/dubbo-spring-boot-project
+ :: Dubbo (v2.7.8) : https://github.com/apache/dubbo
+ :: Discuss group : dev@dubbo.apache.org
+
+[2022-07-29 17:34:14.779 - INFO] e.OverrideDubboConfigApplicationListener : null - Dubbo Config was overridden by externalized configuration {dubbo.application.name=dubboConsumer, dubbo.application.qos-enable=false, dubbo.config.multiple=true}
+[2022-07-29 17:34:14.870 - INFO] 并发编程14.限流组件.Application                  : null - Starting Application on idea-MacBook-Pro.local with PID 23287 (/Users/linhao/IdeaProjects/my-github/concurrence-programming-lession/target/classes started by linhao in /Users/linhao/IdeaProjects/my-github/concurrence-programming-lession)
+[2022-07-29 17:34:14.871 - INFO] 并发编程14.限流组件.Application                  : null - The following profiles are active: consumer
+[2022-07-29 17:34:15.279 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [referenceAnnotationBeanPostProcessor] has been registered.
+[2022-07-29 17:34:15.279 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.annotation.DubboConfigAliasPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboConfigAliasPostProcessor] has been registered.
+[2022-07-29 17:34:15.280 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.context.DubboLifecycleComponentApplicationListener]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboLifecycleComponentApplicationListener] has been registered.
+[2022-07-29 17:34:15.280 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.context.DubboBootstrapApplicationListener]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboBootstrapApplicationListener] has been registered.
+[2022-07-29 17:34:15.280 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.config.DubboConfigDefaultPropertyValueBeanPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboConfigDefaultPropertyValueBeanPostProcessor] has been registered.
+[2022-07-29 17:34:15.324 - INFO] .b.f.a.ConfigurationBeanBindingRegistrar : null - The configuration bean definition [name : org.apache.dubbo.config.ApplicationConfig#0, content : Root bean: class [org.apache.dubbo.config.ApplicationConfig]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] has been registered.
+[2022-07-29 17:34:15.324 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [com.alibaba.spring.beans.factory.annotation.ConfigurationBeanBindingPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [configurationBeanBindingPostProcessor] has been registered.
+[2022-07-29 17:34:15.372 - INFO] o.s.c.a.ConfigurationClassPostProcessor  : null - Cannot enhance @Configuration bean definition 'org.apache.dubbo.spring.boot.autoconfigure.DubboAutoConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+[2022-07-29 17:34:15.714 - INFO] o.s.b.w.embedded.tomcat.TomcatWebServer  : null - Tomcat initialized with port(s): 8080 (http)
+[2022-07-29 17:34:15.721 - INFO] o.a.coyote.http11.Http11NioProtocol      : null - Initializing ProtocolHandler ["http-nio-8080"]
+[2022-07-29 17:34:15.721 - INFO] o.apache.catalina.core.StandardService   : null - Starting service [Tomcat]
+[2022-07-29 17:34:15.721 - INFO] org.apache.catalina.core.StandardEngine  : null - Starting Servlet engine: [Apache Tomcat/9.0.33]
+[2022-07-29 17:34:15.784 - INFO] o.a.c.c.C.[Tomcat].[localhost].[/]       : null - Initializing Spring embedded WebApplicationContext
+[2022-07-29 17:34:15.784 - INFO] o.s.web.context.ContextLoader            : null - Root WebApplicationContext: initialization completed in 880 ms
+[2022-07-29 17:34:16.087 - INFO] o.s.s.concurrent.ThreadPoolTaskExecutor  : null - Initializing ExecutorService 'applicationTaskExecutor'
+[2022-07-29 17:34:16.346 - INFO] .a.ConfigurationBeanBindingPostProcessor : null - The configuration bean [<dubbo:application qosEnable="false" hostname="idea-MacBook-Pro.local" name="dubboConsumer" />] have been binding by the configuration properties [{name=dubboConsumer, qos-enable=false}]
+[2022-07-29 17:34:16.403 - INFO] o.a.d.c.utils.ConfigValidationUtils      : null -  [DUBBO] There's no valid monitor config found, if you want to open monitor statistics for Dubbo, please make sure your monitor is configured properly., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:34:16.467 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap has been initialized!, dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:34:16.467 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is starting..., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:34:16.471 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is ready., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:34:16.471 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap has started., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:34:16.472 - INFO] o.a.coyote.http11.Http11NioProtocol      : null - Starting ProtocolHandler ["http-nio-8080"]
+[2022-07-29 17:34:16.500 - INFO] o.s.b.w.embedded.tomcat.TomcatWebServer  : null - Tomcat started on port(s): 8080 (http) with context path ''
+[2022-07-29 17:34:16.503 - INFO] 并发编程14.限流组件.Application                  : null - Started Application in 2.024 seconds (JVM running for 2.531)
+[2022-07-29 17:34:22.680 - INFO] o.a.c.c.C.[Tomcat].[localhost].[/]       : null - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2022-07-29 17:34:22.680 - INFO] o.s.web.servlet.DispatcherServlet        : null - Initializing Servlet 'dispatcherServlet'
+[2022-07-29 17:34:22.697 - INFO] o.s.web.servlet.DispatcherServlet        : null - Completed initialization in 17 ms
+[2022-07-29 17:34:47.625 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,10,1
+[2022-07-29 17:34:53.679 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,10,1
+[2022-07-29 17:34:57.195 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,10,1
+[2022-07-29 17:34:58.343 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,10,1
+[2022-07-29 17:34:59.406 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,10,1
+[2022-07-29 17:35:07.137 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,10,1
+[2022-07-29 17:35:07.138 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,10,1
+[2022-07-29 17:35:07.138 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,10,1
+[2022-07-29 17:35:07.138 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,10,1
+[2022-07-29 17:35:07.138 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,10,1
+[2022-07-29 17:35:07.141 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,10,1
+[2022-07-29 17:35:07.142 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,10,1
+[2022-07-29 17:35:07.142 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,10,1
+[2022-07-29 17:35:07.142 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,10,1
+[2022-07-29 17:35:07.143 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,10,1
+[2022-07-29 17:35:07.146 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,10,1
+[2022-07-29 17:35:07.146 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,10,1
+[2022-07-29 17:35:07.147 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,10,1
+[2022-07-29 17:35:07.147 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,10,1
+[2022-07-29 17:35:07.147 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,10,1
+[2022-07-29 17:35:07.150 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,10,1
+[2022-07-29 17:35:07.150 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,10,1
+[2022-07-29 17:35:07.150 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,10,1
+[2022-07-29 17:35:07.150 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,10,1
+[2022-07-29 17:35:07.150 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,requestLimit is do-test,10,1
+[2022-07-29 17:36:03.462 - INFO] o.apache.dubbo.config.DubboShutdownHook  : null -  [DUBBO] Run shutdown hook now., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:36:03.464 - INFO] o.a.d.c.e.listener.LoggingEventListener  : null -  [DUBBO] Dubbo Service has been destroyed., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:36:03.464 - INFO] o.a.d.r.support.AbstractRegistryFactory  : null -  [DUBBO] Close all registries [], dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:36:03.471 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is about to shutdown..., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:36:03.472 - INFO] o.s.s.concurrent.ThreadPoolTaskExecutor  : null - Shutting down ExecutorService 'applicationTaskExecutor'
+[2022-07-29 17:36:03.472 - INFO] f.a.ReferenceAnnotationBeanPostProcessor : null - class org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor was destroying!
+[2022-07-29 17:36:06.607 - INFO] o.a.dubbo.common.logger.LoggerFactory    : null - using logger: org.apache.dubbo.common.logger.slf4j.Slf4jLoggerAdapter
+[2022-07-29 17:36:06.615 - INFO] d.s.b.c.e.WelcomeLogoApplicationListener : null - 
+
+ :: Dubbo Spring Boot (v2.7.8) : https://github.com/apache/dubbo-spring-boot-project
+ :: Dubbo (v2.7.8) : https://github.com/apache/dubbo
+ :: Discuss group : dev@dubbo.apache.org
+
+[2022-07-29 17:36:06.619 - INFO] e.OverrideDubboConfigApplicationListener : null - Dubbo Config was overridden by externalized configuration {dubbo.application.name=dubboConsumer, dubbo.application.qos-enable=false, dubbo.config.multiple=true}
+[2022-07-29 17:36:06.702 - INFO] 并发编程14.限流组件.Application                  : null - Starting Application on idea-MacBook-Pro.local with PID 23329 (/Users/linhao/IdeaProjects/my-github/concurrence-programming-lession/target/classes started by linhao in /Users/linhao/IdeaProjects/my-github/concurrence-programming-lession)
+[2022-07-29 17:36:06.703 - INFO] 并发编程14.限流组件.Application                  : null - The following profiles are active: consumer
+[2022-07-29 17:36:07.069 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [referenceAnnotationBeanPostProcessor] has been registered.
+[2022-07-29 17:36:07.069 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.annotation.DubboConfigAliasPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboConfigAliasPostProcessor] has been registered.
+[2022-07-29 17:36:07.069 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.context.DubboLifecycleComponentApplicationListener]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboLifecycleComponentApplicationListener] has been registered.
+[2022-07-29 17:36:07.070 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.context.DubboBootstrapApplicationListener]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboBootstrapApplicationListener] has been registered.
+[2022-07-29 17:36:07.070 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.config.DubboConfigDefaultPropertyValueBeanPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboConfigDefaultPropertyValueBeanPostProcessor] has been registered.
+[2022-07-29 17:36:07.120 - INFO] .b.f.a.ConfigurationBeanBindingRegistrar : null - The configuration bean definition [name : org.apache.dubbo.config.ApplicationConfig#0, content : Root bean: class [org.apache.dubbo.config.ApplicationConfig]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] has been registered.
+[2022-07-29 17:36:07.121 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [com.alibaba.spring.beans.factory.annotation.ConfigurationBeanBindingPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [configurationBeanBindingPostProcessor] has been registered.
+[2022-07-29 17:36:07.164 - INFO] o.s.c.a.ConfigurationClassPostProcessor  : null - Cannot enhance @Configuration bean definition 'org.apache.dubbo.spring.boot.autoconfigure.DubboAutoConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+[2022-07-29 17:36:07.473 - INFO] o.s.b.w.embedded.tomcat.TomcatWebServer  : null - Tomcat initialized with port(s): 8080 (http)
+[2022-07-29 17:36:07.481 - INFO] o.a.coyote.http11.Http11NioProtocol      : null - Initializing ProtocolHandler ["http-nio-8080"]
+[2022-07-29 17:36:07.481 - INFO] o.apache.catalina.core.StandardService   : null - Starting service [Tomcat]
+[2022-07-29 17:36:07.481 - INFO] org.apache.catalina.core.StandardEngine  : null - Starting Servlet engine: [Apache Tomcat/9.0.33]
+[2022-07-29 17:36:07.551 - INFO] o.a.c.c.C.[Tomcat].[localhost].[/]       : null - Initializing Spring embedded WebApplicationContext
+[2022-07-29 17:36:07.551 - INFO] o.s.web.context.ContextLoader            : null - Root WebApplicationContext: initialization completed in 792 ms
+[2022-07-29 17:36:07.904 - INFO] o.s.s.concurrent.ThreadPoolTaskExecutor  : null - Initializing ExecutorService 'applicationTaskExecutor'
+[2022-07-29 17:36:08.195 - INFO] .a.ConfigurationBeanBindingPostProcessor : null - The configuration bean [<dubbo:application name="dubboConsumer" qosEnable="false" hostname="idea-MacBook-Pro.local" />] have been binding by the configuration properties [{name=dubboConsumer, qos-enable=false}]
+[2022-07-29 17:36:08.250 - INFO] o.a.d.c.utils.ConfigValidationUtils      : null -  [DUBBO] There's no valid monitor config found, if you want to open monitor statistics for Dubbo, please make sure your monitor is configured properly., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:36:08.332 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap has been initialized!, dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:36:08.332 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is starting..., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:36:08.336 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is ready., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:36:08.336 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap has started., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:36:08.338 - INFO] o.a.coyote.http11.Http11NioProtocol      : null - Starting ProtocolHandler ["http-nio-8080"]
+[2022-07-29 17:36:08.367 - INFO] o.s.b.w.embedded.tomcat.TomcatWebServer  : null - Tomcat started on port(s): 8080 (http) with context path ''
+[2022-07-29 17:36:08.371 - INFO] 并发编程14.限流组件.Application                  : null - Started Application in 2.048 seconds (JVM running for 2.492)
+[2022-07-29 17:36:11.899 - INFO] o.a.c.c.C.[Tomcat].[localhost].[/]       : null - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2022-07-29 17:36:11.899 - INFO] o.s.web.servlet.DispatcherServlet        : null - Initializing Servlet 'dispatcherServlet'
+[2022-07-29 17:36:11.915 - INFO] o.s.web.servlet.DispatcherServlet        : null - Completed initialization in 16 ms
+[2022-07-29 17:36:12.085 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1
+[2022-07-29 17:36:12.085 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1
+[2022-07-29 17:36:12.086 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1
+[2022-07-29 17:36:12.086 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1
+[2022-07-29 17:36:12.086 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1
+[2022-07-29 17:36:12.090 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1
+[2022-07-29 17:36:12.090 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1
+[2022-07-29 17:36:12.090 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1
+[2022-07-29 17:36:12.090 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1
+[2022-07-29 17:36:12.090 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1
+[2022-07-29 17:36:12.094 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1
+[2022-07-29 17:36:12.095 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1
+[2022-07-29 17:36:12.095 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1
+[2022-07-29 17:36:12.095 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1
+[2022-07-29 17:36:12.095 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1
+[2022-07-29 17:36:12.099 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1
+[2022-07-29 17:36:12.099 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1
+[2022-07-29 17:36:12.099 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1
+[2022-07-29 17:36:12.099 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1
+[2022-07-29 17:36:12.099 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1
+[2022-07-29 17:36:29.053 - INFO] o.apache.dubbo.config.DubboShutdownHook  : null -  [DUBBO] Run shutdown hook now., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:36:29.055 - INFO] o.a.d.c.e.listener.LoggingEventListener  : null -  [DUBBO] Dubbo Service has been destroyed., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:36:29.056 - INFO] o.a.d.r.support.AbstractRegistryFactory  : null -  [DUBBO] Close all registries [], dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:36:29.062 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is about to shutdown..., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:36:29.064 - INFO] o.s.s.concurrent.ThreadPoolTaskExecutor  : null - Shutting down ExecutorService 'applicationTaskExecutor'
+[2022-07-29 17:36:29.064 - INFO] f.a.ReferenceAnnotationBeanPostProcessor : null - class org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor was destroying!
+[2022-07-29 17:36:32.100 - INFO] o.a.dubbo.common.logger.LoggerFactory    : null - using logger: org.apache.dubbo.common.logger.slf4j.Slf4jLoggerAdapter
+[2022-07-29 17:36:32.108 - INFO] d.s.b.c.e.WelcomeLogoApplicationListener : null - 
+
+ :: Dubbo Spring Boot (v2.7.8) : https://github.com/apache/dubbo-spring-boot-project
+ :: Dubbo (v2.7.8) : https://github.com/apache/dubbo
+ :: Discuss group : dev@dubbo.apache.org
+
+[2022-07-29 17:36:32.110 - INFO] e.OverrideDubboConfigApplicationListener : null - Dubbo Config was overridden by externalized configuration {dubbo.application.name=dubboConsumer, dubbo.application.qos-enable=false, dubbo.config.multiple=true}
+[2022-07-29 17:36:32.200 - INFO] 并发编程14.限流组件.Application                  : null - Starting Application on idea-MacBook-Pro.local with PID 23337 (/Users/linhao/IdeaProjects/my-github/concurrence-programming-lession/target/classes started by linhao in /Users/linhao/IdeaProjects/my-github/concurrence-programming-lession)
+[2022-07-29 17:36:32.201 - INFO] 并发编程14.限流组件.Application                  : null - The following profiles are active: consumer
+[2022-07-29 17:36:32.610 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [referenceAnnotationBeanPostProcessor] has been registered.
+[2022-07-29 17:36:32.610 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.annotation.DubboConfigAliasPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboConfigAliasPostProcessor] has been registered.
+[2022-07-29 17:36:32.611 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.context.DubboLifecycleComponentApplicationListener]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboLifecycleComponentApplicationListener] has been registered.
+[2022-07-29 17:36:32.611 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.context.DubboBootstrapApplicationListener]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboBootstrapApplicationListener] has been registered.
+[2022-07-29 17:36:32.612 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [org.apache.dubbo.config.spring.beans.factory.config.DubboConfigDefaultPropertyValueBeanPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [dubboConfigDefaultPropertyValueBeanPostProcessor] has been registered.
+[2022-07-29 17:36:32.659 - INFO] .b.f.a.ConfigurationBeanBindingRegistrar : null - The configuration bean definition [name : org.apache.dubbo.config.ApplicationConfig#0, content : Root bean: class [org.apache.dubbo.config.ApplicationConfig]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] has been registered.
+[2022-07-29 17:36:32.659 - INFO] com.alibaba.spring.util.BeanRegistrar    : null - The Infrastructure bean definition [Root bean: class [com.alibaba.spring.beans.factory.annotation.ConfigurationBeanBindingPostProcessor]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=nullwith name [configurationBeanBindingPostProcessor] has been registered.
+[2022-07-29 17:36:32.711 - INFO] o.s.c.a.ConfigurationClassPostProcessor  : null - Cannot enhance @Configuration bean definition 'org.apache.dubbo.spring.boot.autoconfigure.DubboAutoConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+[2022-07-29 17:36:33.065 - INFO] o.s.b.w.embedded.tomcat.TomcatWebServer  : null - Tomcat initialized with port(s): 8080 (http)
+[2022-07-29 17:36:33.073 - INFO] o.a.coyote.http11.Http11NioProtocol      : null - Initializing ProtocolHandler ["http-nio-8080"]
+[2022-07-29 17:36:33.073 - INFO] o.apache.catalina.core.StandardService   : null - Starting service [Tomcat]
+[2022-07-29 17:36:33.074 - INFO] org.apache.catalina.core.StandardEngine  : null - Starting Servlet engine: [Apache Tomcat/9.0.33]
+[2022-07-29 17:36:33.140 - INFO] o.a.c.c.C.[Tomcat].[localhost].[/]       : null - Initializing Spring embedded WebApplicationContext
+[2022-07-29 17:36:33.140 - INFO] o.s.web.context.ContextLoader            : null - Root WebApplicationContext: initialization completed in 906 ms
+[2022-07-29 17:36:33.451 - INFO] o.s.s.concurrent.ThreadPoolTaskExecutor  : null - Initializing ExecutorService 'applicationTaskExecutor'
+[2022-07-29 17:36:33.728 - INFO] .a.ConfigurationBeanBindingPostProcessor : null - The configuration bean [<dubbo:application name="dubboConsumer" qosEnable="false" hostname="idea-MacBook-Pro.local" />] have been binding by the configuration properties [{name=dubboConsumer, qos-enable=false}]
+[2022-07-29 17:36:33.779 - INFO] o.a.d.c.utils.ConfigValidationUtils      : null -  [DUBBO] There's no valid monitor config found, if you want to open monitor statistics for Dubbo, please make sure your monitor is configured properly., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:36:33.844 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap has been initialized!, dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:36:33.844 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is starting..., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:36:33.848 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is ready., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:36:33.848 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap has started., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:36:33.849 - INFO] o.a.coyote.http11.Http11NioProtocol      : null - Starting ProtocolHandler ["http-nio-8080"]
+[2022-07-29 17:36:33.877 - INFO] o.s.b.w.embedded.tomcat.TomcatWebServer  : null - Tomcat started on port(s): 8080 (http) with context path ''
+[2022-07-29 17:36:33.880 - INFO] 并发编程14.限流组件.Application                  : null - Started Application in 2.056 seconds (JVM running for 2.557)
+[2022-07-29 17:36:40.261 - INFO] o.a.c.c.C.[Tomcat].[localhost].[/]       : null - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2022-07-29 17:36:40.261 - INFO] o.s.web.servlet.DispatcherServlet        : null - Initializing Servlet 'dispatcherServlet'
+[2022-07-29 17:36:40.277 - INFO] o.s.web.servlet.DispatcherServlet        : null - Completed initialization in 16 ms
+[2022-07-29 17:36:40.443 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 
+[2022-07-29 17:36:40.443 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 
+[2022-07-29 17:36:40.444 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 
+[2022-07-29 17:36:40.444 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 
+[2022-07-29 17:36:40.444 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 
+[2022-07-29 17:36:40.447 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 
+[2022-07-29 17:36:40.447 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 
+[2022-07-29 17:36:40.448 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 
+[2022-07-29 17:36:40.448 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 
+[2022-07-29 17:36:40.448 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 
+[2022-07-29 17:36:40.452 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 
+[2022-07-29 17:36:40.452 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 
+[2022-07-29 17:36:40.452 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 
+[2022-07-29 17:36:40.452 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 
+[2022-07-29 17:36:40.452 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 
+[2022-07-29 17:36:40.456 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 
+[2022-07-29 17:36:40.456 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 
+[2022-07-29 17:36:40.456 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 
+[2022-07-29 17:36:40.456 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 
+[2022-07-29 17:36:40.456 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 
+[2022-07-29 17:37:11.833 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 11
+[2022-07-29 17:37:11.833 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 11
+[2022-07-29 17:37:11.833 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 11
+[2022-07-29 17:37:11.833 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 11
+[2022-07-29 17:37:11.833 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 11
+[2022-07-29 17:37:11.838 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 11
+[2022-07-29 17:37:11.838 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 11
+[2022-07-29 17:37:11.838 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 11
+[2022-07-29 17:37:11.838 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 11
+[2022-07-29 17:37:11.838 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 11
+[2022-07-29 17:37:11.843 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 11
+[2022-07-29 17:37:11.843 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 11
+[2022-07-29 17:37:11.843 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 11
+[2022-07-29 17:37:11.843 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 11
+[2022-07-29 17:37:11.843 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 11
+[2022-07-29 17:37:11.847 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 11
+[2022-07-29 17:37:11.847 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 11
+[2022-07-29 17:37:11.847 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 11
+[2022-07-29 17:37:11.847 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 11
+[2022-07-29 17:37:11.847 -ERROR] 并.限流组件.config.RequestLimitInterceptor    : null - 已经达到限流设置了,name is do-test, limit is 10, time gap is 1, current is 11
+[2022-07-29 17:44:34.434 - INFO] o.apache.dubbo.config.DubboShutdownHook  : null -  [DUBBO] Run shutdown hook now., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:44:34.438 - INFO] o.a.d.c.e.listener.LoggingEventListener  : null -  [DUBBO] Dubbo Service has been destroyed., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:44:34.439 - INFO] o.a.d.r.support.AbstractRegistryFactory  : null -  [DUBBO] Close all registries [], dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:44:34.453 - INFO] o.a.d.config.bootstrap.DubboBootstrap    : null -  [DUBBO] DubboBootstrap is about to shutdown..., dubbo version: 2.7.8, current host: 10.1.83.254
+[2022-07-29 17:44:34.455 - INFO] o.s.s.concurrent.ThreadPoolTaskExecutor  : null - Shutting down ExecutorService 'applicationTaskExecutor'
+[2022-07-29 17:44:34.455 - INFO] f.a.ReferenceAnnotationBeanPostProcessor : null - class org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor was destroying!

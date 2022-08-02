@@ -17,14 +17,14 @@ public @interface RequestLimit {
      *
      * @return
      */
-    int limit() default 1;
+    int limit() default 10;
 
     /**
      * 超时设置
      *
      * @return
      */
-    int timeOut() default 3000;
+    int seconds() default 3;
 
     /**
      * 限流场景的名字
