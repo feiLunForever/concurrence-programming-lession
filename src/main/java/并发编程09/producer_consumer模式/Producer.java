@@ -8,16 +8,16 @@ import java.util.concurrent.ArrayBlockingQueue;
  */
 public class Producer {
 
-    private ArrayBlockingQueue<String> queue;
+                private ArrayBlockingQueue<String> queue;
 
     public Producer(ArrayBlockingQueue<String> queue) {
-        this.queue = queue;
-    }
+                    this.queue = queue;
+                }
 
-    public boolean put(String content){
-        try {
-            queue.put(content);
-            return true;
+                public boolean put(String content){
+                    try {
+                        queue.put(content);
+                        return true;
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

@@ -1,5 +1,8 @@
 package 并发编程18.线程池监控.report;
 
+import com.alibaba.fastjson.JSON;
+import 并发编程18.线程池监控.executor.IExecutor;
+
 /**
  * @Author linhao
  * @Date created in 8:58 上午 2022/8/4
@@ -20,6 +23,16 @@ public class ReportInfo {
      * 执行时间 毫秒
      */
     private long executeTime;
+
+    private String threadPoolName;
+
+    public String getThreadPoolName() {
+        return threadPoolName;
+    }
+
+    public void setThreadPoolName(String threadPoolName) {
+        this.threadPoolName = threadPoolName;
+    }
 
     public String getJobId() {
         return jobId;
@@ -52,5 +65,9 @@ public class ReportInfo {
                 ", tag='" + tag + '\'' +
                 ", executeTime=" + executeTime +
                 '}';
+    }
+
+    public String toJson(){
+        return JSON.toJSONString(this);
     }
 }

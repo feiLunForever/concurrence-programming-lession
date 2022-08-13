@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * @Author linhao
@@ -18,6 +19,8 @@ public class IExecutor extends ThreadPoolExecutor {
     private String poolName;
     private String executorName;
 
+    private AtomicLong errorTaskNum = new AtomicLong();
+
     private IReporter reporter = new RedisAsyncReporter();
 
     private final ThreadLocal<Map<String, Object>> taskContent = new ThreadLocal<>();
@@ -26,12 +29,11 @@ public class IExecutor extends ThreadPoolExecutor {
                      String poolName,
                      String executorName,
                      BlockingQueue<Runnable> workQueue,
-                     ThreadFactory threadFactory,
                      RejectedExecutionHandler handler,
                      Boolean allowCoreThreadTimeOut,
                      Boolean preStartCoreThread,
                      Boolean preStartAllCoreThreads) {
-        super(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, threadFactory, handler);
+        super(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, new IThreadFactory(executorName), handler);
         this.poolName = poolName;
         this.executorName = executorName;
         super.allowCoreThreadTimeOut(allowCoreThreadTimeOut);
@@ -81,9 +83,47 @@ public class IExecutor extends ThreadPoolExecutor {
         reporter.doReport(reportInfo);
     }
 
+
     public static String evalString(Object obj) {
         if (obj == null)
             return "";
         return obj.toString();
     }
+
+    public long getErrorNum(){
+        return errorTaskNum.get();
+    }
+
+    @Override
+    public int getCorePoolSize(){
+        return super.getCorePoolSize();
+    }
+
+    @Override
+    public long getTaskCount() {
+        return super.getTaskCount();
+    }
+
+
+    @Override
+    public long getCompletedTaskCount() {
+        return super.getCompletedTaskCount();
+    }
+
+    public String getExecutorName() {
+        return executorName;
+    }
+
+    public void setExecutorName(String executorName) {
+        this.executorName = executorName;
+    }
+
+    public String getPoolName() {
+        return poolName;
+    }
+
+    public void setPoolName(String poolName) {
+        this.poolName = poolName;
+    }
+
 }

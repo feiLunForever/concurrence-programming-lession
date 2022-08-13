@@ -1,6 +1,8 @@
 package 并发编程18.线程池监控.report;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
+import 并发编程18.线程池监控.executor.ThreadPoolDetailInfo;
+import 并发编程18.线程池监控.report.redis.IRedisService;
 
 /**
  * 往redis异步上报数据信息
@@ -10,9 +12,19 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class RedisAsyncReporter implements IReporter{
 
+    private IRedisService redisService;
+    private static final String JOB_INFO_LIST = "job_info_list";
+    private static final String THREAD_POOL_DETAIL_INFO_LIST = "thread_pool:detail_info_list";
 
     @Override
     public void doReport(ReportInfo reportInfo) {
-        System.out.println(reportInfo);
+        redisService.lpush(JOB_INFO_LIST,reportInfo.toJson());
     }
+
+    @Override
+    public void doReportThreadPoolInfo(ThreadPoolDetailInfo threadPoolDetailInfo) {
+        redisService.lpush(THREAD_POOL_DETAIL_INFO_LIST,threadPoolDetailInfo.toJson());
+    }
+
+
 }

@@ -34,7 +34,9 @@ public class LockCompareDemo {
             } catch (Exception e) {
                 e.printStackTrace();
             } finally {
-                reentrantLock.unlock();
+                if (reentrantLock.isLocked()) {
+                    reentrantLock.unlock();
+                }
             }
         } else {
             //todo
@@ -49,7 +51,9 @@ public class LockCompareDemo {
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {
-                    reentrantLock.unlock();
+                    if (reentrantLock.isLocked()) {
+                        reentrantLock.unlock();
+                    }
                 }
             } else {
                 //todo
