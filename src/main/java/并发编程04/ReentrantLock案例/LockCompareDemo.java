@@ -17,13 +17,15 @@ public class LockCompareDemo {
     public void lockMethod() {
         //lock操作要放置在try代码块之外，
         //因为finally中的unlock要求锁的monitor对象需要持有，否则会抛出 IllegalMonitorStateException 异常
-        reentrantLock.lock();
         try {
+            reentrantLock.lock();
             i++;
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            reentrantLock.unlock();
+            if (reentrantLock.isLocked()) {
+                reentrantLock.unlock();
+            }
         }
     }
 
@@ -34,9 +36,7 @@ public class LockCompareDemo {
             } catch (Exception e) {
                 e.printStackTrace();
             } finally {
-                if (reentrantLock.isLocked()) {
-                    reentrantLock.unlock();
-                }
+                reentrantLock.unlock();
             }
         } else {
             //todo
@@ -51,9 +51,7 @@ public class LockCompareDemo {
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {
-                    if (reentrantLock.isLocked()) {
-                        reentrantLock.unlock();
-                    }
+                    reentrantLock.unlock();
                 }
             } else {
                 //todo
@@ -66,15 +64,13 @@ public class LockCompareDemo {
     public void lockInterruptiblyMethod() {
         try {
             reentrantLock.lockInterruptibly();
-            try {
-                i++;
-            } catch (Exception e) {
-                e.printStackTrace();
-            } finally {
-                reentrantLock.unlock();
-            }
+            i++;
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            if (reentrantLock.isLocked()) {
+                reentrantLock.unlock();
+            }
         }
     }
 

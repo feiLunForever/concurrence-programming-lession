@@ -13,7 +13,7 @@ public class LockInterruptDemo {
 
 
     static class LockInterruptThread_1 implements Runnable {
-        private Lock lock = new ReentrantLock();
+        private ReentrantLock lock = new ReentrantLock();
 
         @Override
         public void run() {
@@ -32,7 +32,9 @@ public class LockInterruptDemo {
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {
-                    lock.unlock();
+                    if(lock.isLocked()){
+                        lock.unlock();
+                    }
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -59,7 +61,7 @@ public class LockInterruptDemo {
 
 
     static class LockInterruptThread_3 implements Runnable {
-        private Lock lock = new ReentrantLock();
+        private ReentrantLock lock = new ReentrantLock();
 
         @Override
         public void run() {
@@ -76,7 +78,9 @@ public class LockInterruptDemo {
             } catch (Exception e) {
                 e.printStackTrace();
             } finally {
-                lock.unlock();
+                if(lock.isLocked()){
+                    lock.unlock();
+                }
             }
         }
     }
