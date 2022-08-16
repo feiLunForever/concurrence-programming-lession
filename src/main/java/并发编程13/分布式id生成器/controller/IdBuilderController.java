@@ -1,9 +1,10 @@
-package com.qiyu.tech.id.builder.controller;
+package 并发编程13.分布式id生成器.controller;
 
-import com.qiyu.tech.id.builder.service.IdBuilderService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import 并发编程13.分布式id生成器.service.IdBuilderService;
 
 import javax.annotation.Resource;
 
@@ -15,7 +16,7 @@ import javax.annotation.Resource;
 @RequestMapping(value = "id-builder")
 public class IdBuilderController {
 
-    @Resource
+    @Autowired
     private IdBuilderService idBuilderService;
 
     @GetMapping("increase-id")

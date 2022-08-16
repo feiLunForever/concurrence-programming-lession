@@ -1,21 +1,24 @@
-package com.qiyu.tech.id.builder.service.impl;
+package 并发编程13.分布式id生成器.service.impl;
 
-import com.qiyu.tech.id.builder.bean.IdBuilderPO;
-import com.qiyu.tech.id.builder.bean.LocalSeqId;
-import com.qiyu.tech.id.builder.dao.IdBuilderMapper;
-import com.qiyu.tech.id.builder.service.IdBuilderService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomUtils;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import 并发编程13.分布式id生成器.bean.LocalSeqId;
+import 并发编程13.分布式id生成器.bean.po.IdBuilderPO;
+import 并发编程13.分布式id生成器.dao.mapper.IdBuilderMapper;
+import 并发编程13.分布式id生成器.service.IdBuilderService;
 
 import javax.annotation.Resource;
 import javax.management.RuntimeErrorException;
-import java.util.*;
+import java.util.BitSet;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import static com.qiyu.tech.id.builder.constants.IdTypeConstants.*;
+import static 并发编程13.分布式id生成器.constants.IdTypeConstants.NEED_SEQ;
+
 
 /**
  * @Author idea
@@ -39,7 +42,8 @@ public class IdBuilderServiceImpl implements IdBuilderService, InitializingBean 
 
     @Resource
     private IdBuilderMapper idBuilderMapper;
-//    @Value("${idBuilder.index}")
+
+    @Value("${idBuilder.index}")
     private int idBuilderIndex;
 
     @Override
@@ -58,10 +62,10 @@ public class IdBuilderServiceImpl implements IdBuilderService, InitializingBean 
                     log.error("[unionId] refreshIdBuilderConfig出现异常");
                     return null;
                 }
-                idBuilderPO.setCurrentThreshold(newIdBuilderPO.getCurrentThreshold());
+                idBuilderPO.setNextThreshold(newIdBuilderPO.getNextThreshold());
                 newBuilderMap.put(code, false);
             }
-            long initNum = idBuilderPO.getCurrentThreshold();
+            long initNum = idBuilderPO.getNextThreshold();
             int step = idBuilderPO.getStep();
             int randomIndex = RandomUtils.nextInt((int) initNum, (int) initNum + step);
             BitSet bitSet = bitSetMap.get(code);
@@ -87,9 +91,9 @@ public class IdBuilderServiceImpl implements IdBuilderService, InitializingBean 
                         log.error("重试超过100次没有更新自增id配置成功");
                         return null;
                     }
-                    initNum = newIdBuilderPO.getCurrentThreshold();
+                    initNum = newIdBuilderPO.getNextThreshold();
                     step = newIdBuilderPO.getStep();
-                    idBuilderPO.setCurrentThreshold(initNum);
+                    idBuilderPO.setNextThreshold(initNum);
                     bitSet.clear();
                     log.info("[unionId] 扩容IdBuilder，new idBuilderPO is {}",idBuilderPO);
                 }
@@ -119,8 +123,8 @@ public class IdBuilderServiceImpl implements IdBuilderService, InitializingBean 
                     return null;
                 }
                 newBuilderMap.put(code, false);
-                localSeqId.setCurrentId(updateIdBuilderPO.getCurrentThreshold());
-                localSeqId.setNextUpdateId(updateIdBuilderPO.getCurrentThreshold() + updateIdBuilderPO.getStep());
+                localSeqId.setCurrentId(updateIdBuilderPO.getNextThreshold());
+                localSeqId.setNextUpdateId(updateIdBuilderPO.getNextThreshold() + updateIdBuilderPO.getStep());
             }
             //需要更新本地步长
             if (localSeqId.getCurrentId() >= localSeqId.getNextUpdateId()) {
@@ -129,9 +133,9 @@ public class IdBuilderServiceImpl implements IdBuilderService, InitializingBean 
                     log.error("[unionSeqId] updateIdBuilderConfig出现异常");
                     return null;
                 }
-                idBuilderPO.setCurrentThreshold(newIdBuilderPO.getCurrentThreshold());
-                localSeqId.setCurrentId(newIdBuilderPO.getCurrentThreshold());
-                localSeqId.setNextUpdateId(newIdBuilderPO.getCurrentThreshold() + newIdBuilderPO.getStep());
+                idBuilderPO.setNextThreshold(newIdBuilderPO.getNextThreshold());
+                localSeqId.setCurrentId(newIdBuilderPO.getNextThreshold());
+                localSeqId.setNextUpdateId(newIdBuilderPO.getNextThreshold() + newIdBuilderPO.getStep());
                 log.info("[unionSeqId] 扩容IdBuilder，new localSeqId is {}",localSeqId);
             }
             return result;
@@ -164,7 +168,7 @@ public class IdBuilderServiceImpl implements IdBuilderService, InitializingBean 
         //假设重试过程中出现网络异常，那么使用cas的时候必须要考虑退出情况 极限情况下更新100次
         for (int i = 0; i < 100; i++) {
             IdBuilderPO newIdBuilderPO = idBuilderMapper.selectOneForUpdate(idBuilderPO.getId());
-            updateResult = idBuilderMapper.updateCurrentThreshold(newIdBuilderPO.getCurrentThreshold() + newIdBuilderPO.getStep(), newIdBuilderPO.getId(), newIdBuilderPO.getVersion());
+            updateResult = idBuilderMapper.updateCurrentThreshold(newIdBuilderPO.getNextThreshold() + newIdBuilderPO.getStep(), newIdBuilderPO.getId(), newIdBuilderPO.getVersion());
             if (updateResult > 0) {
                 return newIdBuilderPO;
             }
@@ -198,8 +202,8 @@ public class IdBuilderServiceImpl implements IdBuilderService, InitializingBean 
             if (idBuilderPO.getIsSeq() == NEED_SEQ) {
                 idBuilderSeqMap.put(idBuilderPO.getId(), idBuilderPO);
                 LocalSeqId localSeqId = new LocalSeqId();
-                localSeqId.setNextUpdateId(idBuilderPO.getCurrentThreshold() + idBuilderPO.getStep());
-                localSeqId.setCurrentId(idBuilderPO.getCurrentThreshold());
+                localSeqId.setNextUpdateId(idBuilderPO.getNextThreshold() + idBuilderPO.getStep());
+                localSeqId.setCurrentId(idBuilderPO.getNextThreshold());
                 localSeqMap.put(idBuilderPO.getId(), localSeqId);
             } else {
                 idBuilderNotSeqMap.put(idBuilderPO.getId(), idBuilderPO);

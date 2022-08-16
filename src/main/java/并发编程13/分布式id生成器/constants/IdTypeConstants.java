@@ -1,4 +1,4 @@
-package com.qiyu.tech.id.builder.constants;
+package 并发编程13.分布式id生成器.constants;
 
 
 /**

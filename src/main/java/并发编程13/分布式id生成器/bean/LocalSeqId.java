@@ -1,6 +1,5 @@
-package com.qiyu.tech.id.builder.bean;
+package 并发编程13.分布式id生成器.bean;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 

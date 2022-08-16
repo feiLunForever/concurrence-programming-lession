@@ -1,8 +1,28 @@
 package 并发编程13.分布式id生成器.dao.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
+import 并发编程13.分布式id生成器.bean.po.IdBuilderPO;
+
+import java.util.List;
+
 /**
  * @Author linhao
  * @Date created in 11:50 下午 2022/8/16
  */
-public class IdBuilderMapper {
+@Mapper
+public interface IdBuilderMapper extends BaseMapper<IdBuilderPO> {
+
+    @Select("select * from t_id_builder_config")
+    List<IdBuilderPO> selectAll();
+
+    @Select("select * from t_id_builder_config where id=#{id} limit 1 for update")
+    IdBuilderPO selectOneForUpdate(@Param("id") int id);
+
+    @Update("UPDATE t_id_builder_config set next_threshold=#{nextThreshold},version=version+1 where id=#{id} and version=#{version}")
+    Integer updateCurrentThreshold(@Param("nextThreshold") long currentThreshold,@Param("id") int id,@Param("version") int version);
+
 }
