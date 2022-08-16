@@ -3,11 +3,17 @@
 <mapper namespace="并发编程15.分库分表.dao.UserMessageMapper">
 
     <select id="selectByUserId" parameterType="java.util.Map" resultType="并发编程15.分库分表.po.UserMessagePO">
-        select * from t_user_message_${table_index} where user_id=#{userId}
+        select * from t_user_message_${tableIndex} where user_id=#{userId}
     </select>
 
-    <select id="selectBySource" parameterType="java.util.Map" resultType="并发编程15.分库分表.po.UserMessagePO">
-        select * from t_user_message order by id desc
+
+    <select id="selectNotReply" parameterType="java.util.Map" resultType="并发编程15.分库分表.po.UserMessagePO">
+        select * from t_user_message_${tableIndex} where user_id in
+        <foreach collection="userIdList" item="userId" open="(" separator="," close=")">
+            #{userId}
+        </foreach>
+        and `status`=1 and reply=0
+        and create_time>=DATE_SUB(now(), INTERVAL 1 day);
     </select>
 
 </mapper>

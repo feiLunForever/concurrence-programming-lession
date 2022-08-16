@@ -7,7 +7,7 @@ import dubbo.context.CommonRequest;
 import dubbo.context.CommonRequestContext;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 10:35 下午 2022/7/18
  */
 public class TraceInfoConverter extends ClassicConverter {

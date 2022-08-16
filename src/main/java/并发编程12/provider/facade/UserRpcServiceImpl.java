@@ -5,9 +5,16 @@ import dubbo.context.CommonRequest;
 import dubbo.context.CommonRequestContext;
 import dubbo.interfaces.UserRpcService;
 import org.apache.dubbo.config.annotation.DubboService;
+import org.apache.rocketmq.client.exception.MQBrokerException;
+import org.apache.rocketmq.client.exception.MQClientException;
+import org.apache.rocketmq.client.producer.DefaultMQProducer;
+import org.apache.rocketmq.common.message.Message;
+import org.apache.rocketmq.remoting.exception.RemotingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import 并发编程12.constants.TopicConstants;
 
+import javax.annotation.Resource;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
@@ -23,6 +30,8 @@ public class UserRpcServiceImpl implements UserRpcService {
 
     public Executor executor = Executors.newSingleThreadExecutor();
 
+    @Resource
+    private DefaultMQProducer mqProducer;
 
     @Override
     public boolean isUserExist(long id) {
@@ -39,6 +48,12 @@ public class UserRpcServiceImpl implements UserRpcService {
                 }
             }
         });
+        try {
+            mqProducer.send(new Message(TopicConstants.TEST_TOPIC,"test-mq".getBytes()));
+            System.out.println("发送消息数据");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return true;
     }
 

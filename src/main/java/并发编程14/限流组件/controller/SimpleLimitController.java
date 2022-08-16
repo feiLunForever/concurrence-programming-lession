@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.concurrent.Semaphore;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 8:46 上午 2022/8/2
  */
 @RestController

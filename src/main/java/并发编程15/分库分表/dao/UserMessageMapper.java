@@ -16,4 +16,6 @@ public interface UserMessageMapper extends BaseMapper<UserMessagePO> {
 
 
     List<UserMessagePO> selectByUserId(Map<String,Object> param);
+
+    List<UserMessagePO> selectNotReply(Map<String,Object> param);
 }

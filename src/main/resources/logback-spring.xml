@@ -45,7 +45,7 @@
     </appender>
 
 
-    <!-- 测试环境,预发布环境日志 -->
+    <!-- 日志级别 -->
     <logger name="并发编程12" level="DEBUG"/>
     <root>
         <level value="INFO"/>
