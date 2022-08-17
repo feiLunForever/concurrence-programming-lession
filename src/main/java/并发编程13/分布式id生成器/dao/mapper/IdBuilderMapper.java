@@ -19,10 +19,10 @@ public interface IdBuilderMapper extends BaseMapper<IdBuilderPO> {
     @Select("select * from t_id_builder_config")
     List<IdBuilderPO> selectAll();
 
-    @Select("select * from t_id_builder_config where id=#{id} limit 1 for update")
-    IdBuilderPO selectOneForUpdate(@Param("id") int id);
+    @Select("select * from t_id_builder_config where id=#{id} limit 1 ")
+    IdBuilderPO selectOne(@Param("id") int id);
 
-    @Update("UPDATE t_id_builder_config set next_threshold=#{nextThreshold},version=version+1 where id=#{id} and version=#{version}")
-    Integer updateCurrentThreshold(@Param("nextThreshold") long currentThreshold,@Param("id") int id,@Param("version") int version);
+    @Update("UPDATE t_id_builder_config set next_threshold=#{nextThreshold},current_start=#{currentStart},version=version+1 where id=#{id} and version=#{version}")
+    Integer updateCurrentThreshold(@Param("nextThreshold") long nextThreshold, @Param("currentStart") long currentStart, @Param("id") int id, @Param("version") int version);
 
 }

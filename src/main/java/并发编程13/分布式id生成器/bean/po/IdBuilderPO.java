@@ -39,6 +39,11 @@ public class IdBuilderPO {
     private int step;
 
     /**
+     * 当前id所在阶段的开始值
+     */
+    private long currentStart;
+
+    /**
      * 当前id所在阶段的阈值
      */
     private long nextThreshold;
@@ -46,17 +51,12 @@ public class IdBuilderPO {
     /**
      * 业务代码前缀
      */
-    private String bizCode;
+    private String idPrefix;
 
     /**
      * 乐观锁版本号
      */
     private int version;
-
-    /**
-     * 是否需要保证id连续有序性 ，0 是  1 不是
-     */
-    private short isSeq;
 
     private Date createTime;
 
