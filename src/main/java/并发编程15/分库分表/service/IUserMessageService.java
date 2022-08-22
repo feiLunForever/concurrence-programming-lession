@@ -15,12 +15,29 @@ import java.util.Set;
 @Service
 public interface IUserMessageService extends IService<UserMessagePO> {
 
-    void doQueryFromSplitTable(Long userId);
+    /**
+     * 从分表中查询数据
+     *
+     * @param userId
+     * @return
+     */
+    List<UserMessagePO> selectByUserId(Long userId);
 
+    /**
+     * 从分表中查询未读数据
+     *
+     * @param userId
+     * @return
+     */
+    List<UserMessagePO> selectNotRead(Set<Long> userId);
 
-    List<UserMessagePO> selectNotReply(Set<Long> userId);
+    /**
+     * 往单表中写入数据
+     */
+    void insertData();
 
-
-    List<UserMessagePO> selectNotReplyAsync(Set<Long> userId);
-
+    /**
+     * 从源表中将数据写入到各个分表中
+     */
+    void splitFromSourceTable();
 }

@@ -8,7 +8,7 @@ import lombok.Data;
 import java.util.Date;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 10:04 下午 2022/8/9
  */
 @Data
@@ -21,6 +21,13 @@ public class UserMessagePO {
     private Long userId;
 
     private Long objectId;
+
+    //关联id
+    private Long relationId;
+
+    private Integer isRead;
+
+    private Integer sid;
 
     private Integer status;
 

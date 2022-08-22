@@ -3,17 +3,21 @@
 <mapper namespace="并发编程15.分库分表.dao.UserMessageMapper">
 
     <select id="selectByUserId" parameterType="java.util.Map" resultType="并发编程15.分库分表.po.UserMessagePO">
-        select * from t_user_message_${tableIndex} where user_id=#{userId}
+        select * from t_user_message where user_id=#{userId}
     </select>
 
 
-    <select id="selectNotReply" parameterType="java.util.Map" resultType="并发编程15.分库分表.po.UserMessagePO">
-        select * from t_user_message_${tableIndex} where user_id in
-        <foreach collection="userIdList" item="userId" open="(" separator="," close=")">
+    <select id="selectNotRead" parameterType="java.util.Map" resultType="并发编程15.分库分表.po.UserMessagePO">
+        select * from t_user_message where user_id in
+        <foreach collection="userIds" item="userId" open="(" separator="," close=")">
             #{userId}
         </foreach>
-        and `status`=1 and reply=0
-        and create_time>=DATE_SUB(now(), INTERVAL 1 day);
+        and `status`=1 and is_read=0;
     </select>
 
+    <insert id="insertToSplitTable">
+        INSERT INTO t_user_message_${tableIndex}( user_id, object_id, relation_id, status, content, is_read, sid, type, ext_json, create_time, update_time)
+        VALUES (#{user.userId},#{user.objectId},#{user.relationId},#{user.status},
+        #{user.content},#{user.isRead},#{user.sid},#{user.type},#{user.extJson},#{user.createTime},#{user.updateTime})
+    </insert>
 </mapper>

@@ -7,13 +7,13 @@ package 并发编程15.分库分表.config;
 public class TableIdContext {
 
     //使用ThreadLocal防止多线程相互影响
-    public static ThreadLocal<Integer> id = new ThreadLocal<Integer>();
+    public static ThreadLocal<Long> id = new ThreadLocal<>();
 
-    public static void setId(Integer idValue) {
+    public static void setId(Long idValue) {
         id.set(idValue);
     }
 
-    public static Integer getId(){
+    public static Long getId(){
         return id.get();
     }
 

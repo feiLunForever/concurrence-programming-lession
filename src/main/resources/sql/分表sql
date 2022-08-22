@@ -1,0 +1,212 @@
+CREATE TABLE `t_user_message` (
+  `id` bigint(20) NOT NULL COMMENT '主键id',
+  `userId` int(11) NOT NULL DEFAULT '0' COMMENT '发信方id',
+  `objectId` int(11) NOT NULL DEFAULT '0' COMMENT '收信方id',
+  `relationId` bigint(20) NOT NULL DEFAULT '0' COMMENT '关联id',
+  `status` tinyint(2) NOT NULL DEFAULT '1' COMMENT '状态（0无效1有效）',
+  `content` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '聊天内容',
+  `isRead` tinyint(2) NOT NULL DEFAULT '0' COMMENT '已读（0未读 1已读）',
+  `sid` int(9) NOT NULL DEFAULT '0' COMMENT '聊天条数',
+  `type` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '类型（0文字内容，1表情，2语音，3视频，4分享链接）',
+  `extJson` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '扩展字段',
+  `createTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  KEY `idx_userId` (`userId`) USING BTREE COMMENT '发信方id',
+  KEY `idx_objectId` (`objectId`) USING BTREE COMMENT '收信方id',
+  KEY `idx_relationId` (`id`) USING BTREE COMMENT '关联id'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+分表sql：
+
+CREATE TABLE `t_user_message_0001` (
+  `id` bigint(20) NOT NULL COMMENT '主键id',
+  `userId` int(11) NOT NULL DEFAULT '0' COMMENT '发信方id',
+  `objectId` int(11) NOT NULL DEFAULT '0' COMMENT '收信方id',
+  `relationId` bigint(20) NOT NULL DEFAULT '0' COMMENT '关联id',
+  `status` tinyint(2) NOT NULL DEFAULT '1' COMMENT '状态（0无效1有效）',
+  `content` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '聊天内容',
+  `isRead` tinyint(2) NOT NULL DEFAULT '0' COMMENT '已读（0未读 1已读）',
+  `sid` int(9) NOT NULL DEFAULT '0' COMMENT '聊天条数',
+  `type` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '类型（0文字内容，1表情，2语音，3视频，4分享链接）',
+  `extJson` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '扩展字段',
+  `createTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  KEY `idx_userId` (`userId`) USING BTREE COMMENT '发信方id',
+  KEY `idx_objectId` (`objectId`) USING BTREE COMMENT '收信方id',
+  KEY `idx_relationId` (`id`) USING BTREE COMMENT '关联id'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+CREATE TABLE `t_user_message_0002` (
+  `id` bigint(20) NOT NULL COMMENT '主键id',
+  `userId` int(11) NOT NULL DEFAULT '0' COMMENT '发信方id',
+  `objectId` int(11) NOT NULL DEFAULT '0' COMMENT '收信方id',
+  `relationId` bigint(20) NOT NULL DEFAULT '0' COMMENT '关联id',
+  `status` tinyint(2) NOT NULL DEFAULT '1' COMMENT '状态（0无效1有效）',
+  `content` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '聊天内容',
+  `isRead` tinyint(2) NOT NULL DEFAULT '0' COMMENT '已读（0未读 1已读）',
+  `sid` int(9) NOT NULL DEFAULT '0' COMMENT '聊天条数',
+  `type` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '类型（0文字内容，1表情，2语音，3视频，4分享链接）',
+  `extJson` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '扩展字段',
+  `createTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  KEY `idx_userId` (`userId`) USING BTREE COMMENT '发信方id',
+  KEY `idx_objectId` (`objectId`) USING BTREE COMMENT '收信方id',
+  KEY `idx_relationId` (`id`) USING BTREE COMMENT '关联id'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+CREATE TABLE `t_user_message_0003` (
+  `id` bigint(20) NOT NULL COMMENT '主键id',
+  `userId` int(11) NOT NULL DEFAULT '0' COMMENT '发信方id',
+  `objectId` int(11) NOT NULL DEFAULT '0' COMMENT '收信方id',
+  `relationId` bigint(20) NOT NULL DEFAULT '0' COMMENT '关联id',
+  `status` tinyint(2) NOT NULL DEFAULT '1' COMMENT '状态（0无效1有效）',
+  `content` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '聊天内容',
+  `isRead` tinyint(2) NOT NULL DEFAULT '0' COMMENT '已读（0未读 1已读）',
+  `sid` int(9) NOT NULL DEFAULT '0' COMMENT '聊天条数',
+  `type` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '类型（0文字内容，1表情，2语音，3视频，4分享链接）',
+  `extJson` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '扩展字段',
+  `createTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  KEY `idx_userId` (`userId`) USING BTREE COMMENT '发信方id',
+  KEY `idx_objectId` (`objectId`) USING BTREE COMMENT '收信方id',
+  KEY `idx_relationId` (`id`) USING BTREE COMMENT '关联id'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+CREATE TABLE `t_user_message_0004` (
+  `id` bigint(20) NOT NULL COMMENT '主键id',
+  `userId` int(11) NOT NULL DEFAULT '0' COMMENT '发信方id',
+  `objectId` int(11) NOT NULL DEFAULT '0' COMMENT '收信方id',
+  `relationId` bigint(20) NOT NULL DEFAULT '0' COMMENT '关联id',
+  `status` tinyint(2) NOT NULL DEFAULT '1' COMMENT '状态（0无效1有效）',
+  `content` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '聊天内容',
+  `isRead` tinyint(2) NOT NULL DEFAULT '0' COMMENT '已读（0未读 1已读）',
+  `sid` int(9) NOT NULL DEFAULT '0' COMMENT '聊天条数',
+  `type` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '类型（0文字内容，1表情，2语音，3视频，4分享链接）',
+  `extJson` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '扩展字段',
+  `createTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  KEY `idx_userId` (`userId`) USING BTREE COMMENT '发信方id',
+  KEY `idx_objectId` (`objectId`) USING BTREE COMMENT '收信方id',
+  KEY `idx_relationId` (`id`) USING BTREE COMMENT '关联id'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+CREATE TABLE `t_user_message_0005` (
+  `id` bigint(20) NOT NULL COMMENT '主键id',
+  `userId` int(11) NOT NULL DEFAULT '0' COMMENT '发信方id',
+  `objectId` int(11) NOT NULL DEFAULT '0' COMMENT '收信方id',
+  `relationId` bigint(20) NOT NULL DEFAULT '0' COMMENT '关联id',
+  `status` tinyint(2) NOT NULL DEFAULT '1' COMMENT '状态（0无效1有效）',
+  `content` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '聊天内容',
+  `isRead` tinyint(2) NOT NULL DEFAULT '0' COMMENT '已读（0未读 1已读）',
+  `sid` int(9) NOT NULL DEFAULT '0' COMMENT '聊天条数',
+  `type` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '类型（0文字内容，1表情，2语音，3视频，4分享链接）',
+  `extJson` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '扩展字段',
+  `createTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  KEY `idx_userId` (`userId`) USING BTREE COMMENT '发信方id',
+  KEY `idx_objectId` (`objectId`) USING BTREE COMMENT '收信方id',
+  KEY `idx_relationId` (`id`) USING BTREE COMMENT '关联id'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+CREATE TABLE `t_user_message_0006` (
+  `id` bigint(20) NOT NULL COMMENT '主键id',
+  `userId` int(11) NOT NULL DEFAULT '0' COMMENT '发信方id',
+  `objectId` int(11) NOT NULL DEFAULT '0' COMMENT '收信方id',
+  `relationId` bigint(20) NOT NULL DEFAULT '0' COMMENT '关联id',
+  `status` tinyint(2) NOT NULL DEFAULT '1' COMMENT '状态（0无效1有效）',
+  `content` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '聊天内容',
+  `isRead` tinyint(2) NOT NULL DEFAULT '0' COMMENT '已读（0未读 1已读）',
+  `sid` int(9) NOT NULL DEFAULT '0' COMMENT '聊天条数',
+  `type` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '类型（0文字内容，1表情，2语音，3视频，4分享链接）',
+  `extJson` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '扩展字段',
+  `createTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  KEY `idx_userId` (`userId`) USING BTREE COMMENT '发信方id',
+  KEY `idx_objectId` (`objectId`) USING BTREE COMMENT '收信方id',
+  KEY `idx_relationId` (`id`) USING BTREE COMMENT '关联id'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+CREATE TABLE `t_user_message_0007` (
+  `id` bigint(20) NOT NULL COMMENT '主键id',
+  `userId` int(11) NOT NULL DEFAULT '0' COMMENT '发信方id',
+  `objectId` int(11) NOT NULL DEFAULT '0' COMMENT '收信方id',
+  `relationId` bigint(20) NOT NULL DEFAULT '0' COMMENT '关联id',
+  `status` tinyint(2) NOT NULL DEFAULT '1' COMMENT '状态（0无效1有效）',
+  `content` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '聊天内容',
+  `isRead` tinyint(2) NOT NULL DEFAULT '0' COMMENT '已读（0未读 1已读）',
+  `sid` int(9) NOT NULL DEFAULT '0' COMMENT '聊天条数',
+  `type` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '类型（0文字内容，1表情，2语音，3视频，4分享链接）',
+  `extJson` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '扩展字段',
+  `createTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  KEY `idx_userId` (`userId`) USING BTREE COMMENT '发信方id',
+  KEY `idx_objectId` (`objectId`) USING BTREE COMMENT '收信方id',
+  KEY `idx_relationId` (`id`) USING BTREE COMMENT '关联id'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+CREATE TABLE `t_user_message_0008` (
+  `id` bigint(20) NOT NULL COMMENT '主键id',
+  `userId` int(11) NOT NULL DEFAULT '0' COMMENT '发信方id',
+  `objectId` int(11) NOT NULL DEFAULT '0' COMMENT '收信方id',
+  `relationId` bigint(20) NOT NULL DEFAULT '0' COMMENT '关联id',
+  `status` tinyint(2) NOT NULL DEFAULT '1' COMMENT '状态（0无效1有效）',
+  `content` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '聊天内容',
+  `isRead` tinyint(2) NOT NULL DEFAULT '0' COMMENT '已读（0未读 1已读）',
+  `sid` int(9) NOT NULL DEFAULT '0' COMMENT '聊天条数',
+  `type` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '类型（0文字内容，1表情，2语音，3视频，4分享链接）',
+  `extJson` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '扩展字段',
+  `createTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  KEY `idx_userId` (`userId`) USING BTREE COMMENT '发信方id',
+  KEY `idx_objectId` (`objectId`) USING BTREE COMMENT '收信方id',
+  KEY `idx_relationId` (`id`) USING BTREE COMMENT '关联id'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+CREATE TABLE `t_user_message_0009` (
+  `id` bigint(20) NOT NULL COMMENT '主键id',
+  `userId` int(11) NOT NULL DEFAULT '0' COMMENT '发信方id',
+  `objectId` int(11) NOT NULL DEFAULT '0' COMMENT '收信方id',
+  `relationId` bigint(20) NOT NULL DEFAULT '0' COMMENT '关联id',
+  `status` tinyint(2) NOT NULL DEFAULT '1' COMMENT '状态（0无效1有效）',
+  `content` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '聊天内容',
+  `isRead` tinyint(2) NOT NULL DEFAULT '0' COMMENT '已读（0未读 1已读）',
+  `sid` int(9) NOT NULL DEFAULT '0' COMMENT '聊天条数',
+  `type` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '类型（0文字内容，1表情，2语音，3视频，4分享链接）',
+  `extJson` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '扩展字段',
+  `createTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  KEY `idx_userId` (`userId`) USING BTREE COMMENT '发信方id',
+  KEY `idx_objectId` (`objectId`) USING BTREE COMMENT '收信方id',
+  KEY `idx_relationId` (`id`) USING BTREE COMMENT '关联id'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+CREATE TABLE `t_user_message_0010` (
+  `id` bigint(20) NOT NULL COMMENT '主键id',
+  `userId` int(11) NOT NULL DEFAULT '0' COMMENT '发信方id',
+  `objectId` int(11) NOT NULL DEFAULT '0' COMMENT '收信方id',
+  `relationId` bigint(20) NOT NULL DEFAULT '0' COMMENT '关联id',
+  `status` tinyint(2) NOT NULL DEFAULT '1' COMMENT '状态（0无效1有效）',
+  `content` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '聊天内容',
+  `isRead` tinyint(2) NOT NULL DEFAULT '0' COMMENT '已读（0未读 1已读）',
+  `sid` int(9) NOT NULL DEFAULT '0' COMMENT '聊天条数',
+  `type` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '类型（0文字内容，1表情，2语音，3视频，4分享链接）',
+  `extJson` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '' COMMENT '扩展字段',
+  `createTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  KEY `idx_userId` (`userId`) USING BTREE COMMENT '发信方id',
+  KEY `idx_objectId` (`objectId`) USING BTREE COMMENT '收信方id',
+  KEY `idx_relationId` (`id`) USING BTREE COMMENT '关联id'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
