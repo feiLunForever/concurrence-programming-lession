@@ -5,18 +5,14 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.apache.commons.lang3.RandomUtils;
 import org.springframework.stereotype.Service;
 import 并发编程15.分库分表.config.TableEnum;
-import 并发编程15.分库分表.config.TableIdContext;
 import 并发编程15.分库分表.dao.UserMessageMapper;
 import 并发编程15.分库分表.po.UserMessagePO;
 import 并发编程15.分库分表.service.IUserMessageService;
 import 并发编程15.分库分表.utils.DbUtils;
 
 import java.util.*;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.function.BiFunction;
 
 
 /**
