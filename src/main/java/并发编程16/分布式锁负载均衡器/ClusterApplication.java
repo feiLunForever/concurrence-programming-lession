@@ -1,16 +1,16 @@
-package 并发编程13.分布式id生成器;
+package 并发编程16.分布式锁负载均衡器;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @Author linhao
- * @Date created in 11:44 下午 2022/8/16
+ * @Date created in 8:47 上午 2022/8/28
  */
 @SpringBootApplication
-public class Application {
+public class ClusterApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class);
+        SpringApplication.run(ClusterApplication.class);
     }
 }
