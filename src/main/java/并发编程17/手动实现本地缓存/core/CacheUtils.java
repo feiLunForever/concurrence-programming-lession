@@ -11,7 +11,7 @@ import 并发编程17.手动实现本地缓存.listener.RemovalListener;
  * @Author idea
  * @Date created in 8:54 上午 2022/8/29
  */
-public class CacheUtils implements ICache{
+public class CacheUtils implements ICache {
 
     //这里面主要是缓存的配置数据和存储的map集合
     private CacheGlobal cacheGlobal;
@@ -39,7 +39,7 @@ public class CacheUtils implements ICache{
     }
 
     @Override
-    public void clear(){
+    public void clear() {
         cacheGlobal.cacheConcurrentHashMap.clear();
     }
 
@@ -58,25 +58,14 @@ public class CacheUtils implements ICache{
             return value;
         }
         //如果存在 则更新缓存key的值
-        MyCache item = cacheGlobal.cacheConcurrentHashMap.get(key);
-        if (item != null) {
-            item = new MyCache();
-            item.getHitCount().incrementAndGet();
-            item.setWriteTime(System.currentTimeMillis());
-            item.setDelAfterRead(needDelAfterRead);
-            item.setLastTime(System.currentTimeMillis());
-            item.setExpireTime(expire);
-            item.setValue(value);
-        } else {
-            item = new MyCache();
-            item.setKey(key);
-            item.setDelAfterRead(needDelAfterRead);
-            item.getHitCount().incrementAndGet();
-            item.setLastTime(System.currentTimeMillis());
-            item.setWriteTime(System.currentTimeMillis());
-            item.setExpireTime(expire);
-            item.setValue(value);
-        }
+        MyCache item = new MyCache();
+        item.setKey(key);
+        item.setDelAfterRead(needDelAfterRead);
+        item.getHitCount().incrementAndGet();
+        item.setLastTime(System.currentTimeMillis());
+        item.setWriteTime(System.currentTimeMillis());
+        item.setExpireTime(expire);
+        item.setValue(value);
         cacheGlobal.cacheConcurrentHashMap.put(key, item);
         MyCache finalItem = item;
         cacheGlobal.getAddListeners().forEach(x -> {
@@ -94,7 +83,7 @@ public class CacheUtils implements ICache{
      */
     @Override
     public Object put(String key, Object value, long expire) {
-        return this.put(key,value,false,expire);
+        return this.put(key, value, false, expire);
     }
 
     /**
@@ -131,7 +120,7 @@ public class CacheUtils implements ICache{
             x.onRead(key, finalItem);
         });
         //如果这个key要设置成读取后移除，这里需要支持下
-        if(item.isDelAfterRead()) {
+        if (item.isDelAfterRead()) {
             remove(key);
         }
         return item.getValue();
@@ -155,10 +144,7 @@ public class CacheUtils implements ICache{
             return true;
         }
         //执行过期缓存
-        cacheGlobal.cacheConcurrentHashMap.remove(key);
-        cacheGlobal.getRemovalListeners().forEach(x -> {
-            x.onRemoval(key);
-        });
+        remove(key);
         return false;
     }
 
@@ -194,8 +180,8 @@ public class CacheUtils implements ICache{
      * @param refreshListener
      * @return
      */
-    public CacheUtils registryRefreshListener(RefreshListener refreshListener, int time){
-        Thread refreshThread = new Thread(new RefreshThread(refreshListener,time));
+    public CacheUtils registryRefreshListener(RefreshListener refreshListener, int time) {
+        Thread refreshThread = new Thread(new RefreshThread(refreshListener, time));
         refreshThread.start();
         return this;
     }
@@ -222,12 +208,12 @@ public class CacheUtils implements ICache{
         return this;
     }
 
-    public int size(){
+    public int size() {
         return cacheGlobal.cacheConcurrentHashMap.size();
     }
 
 
-    public CacheUtils maxmumSize(int maxmumSize){
+    public CacheUtils maxmumSize(int maxmumSize) {
         this.cacheGlobal.maxmumSize(maxmumSize);
         return this;
     }
