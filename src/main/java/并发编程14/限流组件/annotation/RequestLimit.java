@@ -3,7 +3,7 @@ package 并发编程14.限流组件.annotation;
 import java.lang.annotation.*;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 3:44 下午 2022/7/24
  */
 @Target({ElementType.METHOD})

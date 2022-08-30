@@ -1,7 +1,7 @@
 package 并发编程15.分库分表.config;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 12:20 下午 2022/8/10
  */
 public class TableIdContext {

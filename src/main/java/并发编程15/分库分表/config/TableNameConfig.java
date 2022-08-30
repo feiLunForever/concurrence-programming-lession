@@ -12,7 +12,7 @@ import java.util.Map;
 import static 并发编程15.分库分表.config.TableEnum.T_USER_MESSAGE;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 11:53 下午 2022/8/9
  */
 @Configuration

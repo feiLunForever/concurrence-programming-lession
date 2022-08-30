@@ -2,7 +2,7 @@ package 并发编程14.限流组件.redis;
 
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 5:45 下午 2022/7/29
  */
 public interface IRedisSemaphore {

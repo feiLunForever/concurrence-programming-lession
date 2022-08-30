@@ -10,7 +10,7 @@ import 并发编程13.分布式id生成器.bean.po.IdBuilderPO;
 import java.util.List;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 11:50 下午 2022/8/16
  */
 @Mapper

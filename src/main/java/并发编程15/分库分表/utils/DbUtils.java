@@ -9,7 +9,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.function.BiFunction;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 10:09 下午 2022/8/22
  */
 public class DbUtils<T> {

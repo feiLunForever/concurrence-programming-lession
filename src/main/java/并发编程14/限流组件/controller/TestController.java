@@ -7,7 +7,7 @@ import 并发编程14.限流组件.annotation.RequestLimit;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 3:37 下午 2022/7/24
  */
 @RestController

@@ -4,7 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 3:58 下午 2021/5/28
  */
 @ConfigurationProperties(prefix = "cache.redis")

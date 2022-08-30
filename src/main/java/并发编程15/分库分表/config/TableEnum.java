@@ -3,7 +3,7 @@ package 并发编程15.分库分表.config;
 /**
  * 分表美剧类型
  *
- * @Author linhao
+ * @Author idea
  * @Date created in 10:23 下午 2022/8/22
  */
 public enum TableEnum {

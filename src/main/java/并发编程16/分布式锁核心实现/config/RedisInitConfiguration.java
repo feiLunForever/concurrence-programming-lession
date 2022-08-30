@@ -18,7 +18,7 @@ import 并发编程16.分布式锁核心实现.redis.impl.RedisServiceImpl;
 import javax.annotation.Resource;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 6:47 下午 2021/4/30
  */
 @Configuration

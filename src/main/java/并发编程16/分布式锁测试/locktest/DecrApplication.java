@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Import;
 import 并发编程16.分布式锁核心实现.config.RedisInitConfiguration;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 10:28 下午 2022/8/24
  */
 @SpringBootApplication

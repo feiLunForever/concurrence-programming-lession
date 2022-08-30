@@ -8,7 +8,7 @@ import 并发编程16.分布式锁测试.locktest.service.TestService;
 import javax.annotation.Resource;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 10:29 下午 2022/8/24
  */
 @RestController

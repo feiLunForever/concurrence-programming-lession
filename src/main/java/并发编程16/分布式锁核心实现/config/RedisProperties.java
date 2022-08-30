@@ -3,7 +3,7 @@ package 并发编程16.分布式锁核心实现.config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 3:58 下午 2021/5/28
  */
 @ConfigurationProperties(prefix = "cache.redis")

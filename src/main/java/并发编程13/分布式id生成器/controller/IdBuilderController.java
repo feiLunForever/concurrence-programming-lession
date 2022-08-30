@@ -8,7 +8,7 @@ import 并发编程13.分布式id生成器.service.IdBuilderService;
 
 
 /**
- * @Author linhao
+ * @Author idea
  * @Date created in 4:27 下午 2020/12/17
  */
 @RestController
