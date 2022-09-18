@@ -8,7 +8,7 @@ import java.util.concurrent.RecursiveTask;
  * 使用forkjoin进行任务计算
  * 查找一批数据中最大的数字
  *
- * @Author linhao
+ * @Author idea
  * @Date created in 8:02 上午 2022/9/1
  */
 public class ForkJoinFindBigNumberDemo {
