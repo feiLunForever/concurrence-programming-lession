@@ -74,7 +74,7 @@ public class IdBuilderServiceImpl implements IdBuilderService, InitializingBean 
         for (IdBuilderPO idBuilderPO : refreshList) {
             //有序的id段由一个LocalSeqId管理
             LocalSeqId localSeqId = new LocalSeqId();
-            localSeqId.setNextUpdateId(new AtomicLong(idBuilderPO.getNextThreshold()+idBuilderPO.getStep()));
+            localSeqId.setNextUpdateId(new AtomicLong(idBuilderPO.getNextThreshold() + idBuilderPO.getStep()));
             localSeqId.setCurrentId(new AtomicLong(idBuilderPO.getNextThreshold()));
             localSeqId.setStep(idBuilderPO.getStep());
             localSeqId.setIdPrefix(idBuilderPO.getIdPrefix());
@@ -138,7 +138,39 @@ public class IdBuilderServiceImpl implements IdBuilderService, InitializingBean 
         }
         //原子性自增操作
         long result = localSeqId.getCurrentId().getAndAdd(1);
+        if (result < localSeqId.getNextUpdateId().get()) {
+            //提前触发更新逻辑
+            refreshNextStep(code);
+        }
         return result;
+    }
+
+
+
+
+
+    private void refreshNextStep(Integer code) {
+        synchronized (this) {
+            //如果更新失败，进行重试
+            for (int i = 0; i < 3; i++) {
+                IdBuilderPO newIdBuilderPO = idBuilderMapper.selectOne(code);
+                long nextThreshold = newIdBuilderPO.getNextThreshold();
+                long currentStart = newIdBuilderPO.getCurrentStart();
+                long step = newIdBuilderPO.getStep();
+                int updateResult = -1;
+                updateResult = idBuilderMapper.updateCurrentThreshold(nextThreshold + step, currentStart + step, code, newIdBuilderPO.getVersion());
+                if (updateResult > 0) {
+                    LocalSeqId tempSeqId = new LocalSeqId();
+                    tempSeqId.setCurrentId(new AtomicLong(nextThreshold + 1));
+                    tempSeqId.setIdPrefix(newIdBuilderPO.getIdPrefix());
+                    tempSeqId.setStep(newIdBuilderPO.getStep());
+                    tempSeqId.setNextUpdateId(new AtomicLong(nextThreshold + step));
+                    localSeqMap.put(code, tempSeqId);
+                    LOGGER.info("更新id本地步长成功");
+                    break;
+                }
+            }
+        }
     }
 
     @Override
