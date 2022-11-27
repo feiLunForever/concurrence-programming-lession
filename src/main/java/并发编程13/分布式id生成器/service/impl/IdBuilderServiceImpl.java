@@ -138,7 +138,7 @@ public class IdBuilderServiceImpl implements IdBuilderService, InitializingBean 
         }
         //原子性自增操作
         long result = localSeqId.getCurrentId().getAndAdd(1);
-        if (result < localSeqId.getNextUpdateId().get()) {
+        if (result >= localSeqId.getNextUpdateId().get() - localSeqId.getStep() * 0.25) {
             //提前触发更新逻辑
             refreshNextStep(code);
         }
